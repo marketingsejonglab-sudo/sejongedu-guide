@@ -1331,7 +1331,7 @@ img { max-width: 100%; display: block; }
   border-left: 3px solid var(--color-primary);
   padding: 18px 22px !important;
   border-radius: var(--radius-md);
-  margin: 22px 36px 0 !important;
+  margin: 22px 36px 32px !important;
   color: var(--slate-800) !important;
   font-size: 14.5px !important;
   line-height: 1.65 !important;
@@ -2497,7 +2497,7 @@ img { max-width: 100%; display: block; }
   .acc-body > *:first-child { padding-top: 22px !important; }
   .acc-body > *:last-child { padding-bottom: 28px !important; }
   .acc-body ul li, .acc-body ol li { font-size: 14px; }
-  .acc-note { margin-left: 24px !important; margin-right: 24px !important; padding: 14px 16px !important; }
+  .acc-note { margin: 18px 24px 24px !important; padding: 14px 16px !important; }
   .course-head.acc-head { padding: 22px 20px; }
   .course-name { font-size: 17px; }
   .course-summary { font-size: 13px; }
