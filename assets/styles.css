@@ -1175,9 +1175,9 @@ img { max-width: 100%; display: block; }
   transition: max-height 0.5s var(--ease-out);
 }
 .acc-item.is-open .acc-body { max-height: 3000px; }
-.acc-body > * { padding-left: 32px; padding-right: 32px; }
-.acc-body > *:first-child { padding-top: 20px; }
-.acc-body > *:last-child { padding-bottom: 32px; }
+.acc-body > * { padding-left: 36px; padding-right: 36px; }
+.acc-body > *:first-child { padding-top: 26px; }
+.acc-body > *:last-child { padding-bottom: 36px; }
 
 /* Lead paragraph */
 .acc-body p {
@@ -1217,11 +1217,10 @@ img { max-width: 100%; display: block; }
 /* Unordered list — blue-dot bullets with breathing room */
 .acc-body ul {
   list-style: none !important;
-  padding-left: 0 !important;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 .acc-body ul li {
   list-style: none !important;
@@ -1268,12 +1267,11 @@ img { max-width: 100%; display: block; }
 /* Ordered list — numbered badge */
 .acc-body ol {
   list-style: none !important;
-  padding-left: 0 !important;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   counter-reset: acc-item;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 .acc-body ol li {
   list-style: none !important;
@@ -1310,11 +1308,11 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(135deg, var(--blue-50), rgba(6, 182, 212, 0.08));
   border: 1px solid rgba(49, 130, 246, 0.22);
   border-left: 3px solid var(--color-primary);
-  padding: 16px 20px !important;
+  padding: 18px 22px !important;
   border-radius: var(--radius-md);
-  margin: 20px 32px 0 !important;
+  margin: 22px 36px 0 !important;
   color: var(--slate-800) !important;
-  font-size: 14px !important;
+  font-size: 14.5px !important;
   line-height: 1.65 !important;
   display: flex;
   align-items: flex-start;
@@ -2467,9 +2465,11 @@ img { max-width: 100%; display: block; }
   }
   .acc-sub { grid-column: 2; grid-row: 2; font-size: 12px; }
   .acc-title { font-size: 15px; }
-  .acc-body > * { padding-left: 20px !important; padding-right: 20px !important; }
+  .acc-body > * { padding-left: 24px !important; padding-right: 24px !important; }
+  .acc-body > *:first-child { padding-top: 22px !important; }
+  .acc-body > *:last-child { padding-bottom: 28px !important; }
   .acc-body ul li, .acc-body ol li { font-size: 14px; }
-  .acc-note { margin-left: 20px !important; margin-right: 20px !important; }
+  .acc-note { margin-left: 24px !important; margin-right: 24px !important; padding: 14px 16px !important; }
   .course-head.acc-head { padding: 22px 20px; }
   .course-name { font-size: 17px; }
   .course-summary { font-size: 13px; }
