@@ -1125,42 +1125,160 @@ img { max-width: 100%; display: block; }
   transition: max-height 0.5s var(--ease-out);
 }
 .acc-item.is-open .acc-body { max-height: 3000px; }
-.acc-body > * { padding-left: 28px; padding-right: 28px; }
-.acc-body > *:first-child { padding-top: 8px; }
-.acc-body > *:last-child { padding-bottom: 28px; }
+.acc-body > * { padding-left: 32px; padding-right: 32px; }
+.acc-body > *:first-child { padding-top: 20px; }
+.acc-body > *:last-child { padding-bottom: 32px; }
+
+/* Lead paragraph */
 .acc-body p {
-  margin-bottom: 14px;
-  color: var(--color-text-sub);
-  line-height: 1.75;
+  margin-bottom: 18px;
+  color: var(--slate-800);
+  line-height: 1.78;
   font-size: 15px;
+  letter-spacing: -0.005em;
 }
-.acc-body strong { color: var(--color-text); }
+.acc-body strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* Sub-heading */
 .acc-body h4 {
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 800;
   color: var(--color-primary);
-  margin: 20px 0 12px;
-  letter-spacing: -0.01em;
+  margin: 28px 0 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.acc-body ul, .acc-body ol {
-  margin-bottom: 16px;
-  padding-left: 20px;
+.acc-body h4::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
-.acc-body ul li, .acc-body ol li {
-  margin-bottom: 8px;
-  color: var(--color-text-sub);
-  line-height: 1.6;
+
+/* Unordered list — blue-dot bullets with breathing room */
+.acc-body ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.acc-body ul li { list-style: disc; }
-.acc-body ol li { list-style: decimal; }
-.acc-note {
+.acc-body ul li {
+  list-style: none !important;
+  color: var(--slate-800);
+  line-height: 1.7;
+  font-size: 15px;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 0 !important;
+}
+.acc-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(49, 130, 246, 0.12);
+}
+
+/* Emphasized list item (highlight box) */
+.acc-body ul li.acc-li--emphasis {
+  background: linear-gradient(90deg, var(--blue-50), rgba(6, 182, 212, 0.06));
+  padding: 12px 16px 12px 34px;
+  border-radius: 10px;
+  margin-top: 4px;
+  font-weight: 700;
+}
+.acc-body ul li.acc-li--emphasis::before {
+  top: 18px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(49, 130, 246, 0.2);
+}
+.acc-body ul li.acc-li--emphasis strong {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+/* Ordered list — numbered badge */
+.acc-body ol {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-bottom: 20px;
+  counter-reset: acc-item;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.acc-body ol li {
+  list-style: none !important;
+  counter-increment: acc-item;
+  color: var(--slate-800);
+  line-height: 1.7;
+  font-size: 15px;
+  padding-left: 40px !important;
+  position: relative;
+  margin-bottom: 0 !important;
+  min-height: 26px;
+}
+.acc-body ol li::before {
+  content: counter(acc-item, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 28px;
+  height: 26px;
+  border-radius: 8px;
   background: var(--blue-50);
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Note callout — with icon */
+.acc-note {
+  background: linear-gradient(135deg, var(--blue-50), rgba(6, 182, 212, 0.08));
+  border: 1px solid rgba(49, 130, 246, 0.22);
   border-left: 3px solid var(--color-primary);
-  padding: 14px 18px !important;
-  border-radius: var(--radius-sm);
-  margin: 16px 28px !important;
-  color: var(--color-text) !important;
+  padding: 16px 20px !important;
+  border-radius: var(--radius-md);
+  margin: 20px 32px 0 !important;
+  color: var(--slate-800) !important;
   font-size: 14px !important;
+  line-height: 1.65 !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.acc-note::before {
+  content: "👉";
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: -1px;
+}
+.acc-note strong {
+  color: var(--color-primary) !important;
+  font-weight: 800;
 }
 
 .link-grid {
@@ -1285,15 +1403,8 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   line-height: 1.5;
 }
-.course-steps {
-  padding-left: 50px !important;
-  margin-bottom: 20px;
-}
-.course-steps li {
-  padding-left: 4px;
-  margin-bottom: 10px !important;
-  font-size: 14.5px !important;
-}
+.course-steps { margin-bottom: 20px; }
+.course-steps li { font-size: 14.5px !important; }
 
 /* ============================================================
    섹션 3: 관리자페이지
@@ -1440,7 +1551,192 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 8px 20px rgba(49, 130, 246, 0.25);
 }
 
-/* 관리자페이지 링크 카드 (2개) */
+/* ============================================================
+   관리자 플랫폼 2박스 (세종에듀 / 포켓클래스)
+============================================================ */
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+.platform-card {
+  background: #fff;
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px 32px;
+  transition: all 0.35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.platform-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--gradient-hero);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+.platform-card::after {
+  content: "";
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(49, 130, 246, 0.08), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  pointer-events: none;
+}
+.platform-card:hover::before { transform: scaleX(1); }
+.platform-card:hover::after { opacity: 1; }
+.platform-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+  box-shadow: 0 24px 48px -12px rgba(49, 130, 246, 0.28);
+}
+.platform-card--alt::before {
+  background: linear-gradient(135deg, var(--cyan-500), #0891B2);
+}
+.platform-card--alt::after {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.1), transparent 65%);
+}
+.platform-card--alt:hover {
+  border-color: var(--cyan-500);
+  box-shadow: 0 24px 48px -12px rgba(6, 182, 212, 0.28);
+}
+
+.platform-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+.platform-ico {
+  width: 72px; height: 72px;
+  border-radius: 20px;
+  background: var(--blue-50);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  transition: all 0.5s var(--ease-spring);
+}
+.platform-card:hover .platform-ico {
+  background: var(--gradient-hero);
+  transform: scale(1.08) rotate(-5deg);
+}
+.platform-card--alt .platform-ico {
+  background: rgba(6, 182, 212, 0.1);
+}
+.platform-card--alt:hover .platform-ico {
+  background: linear-gradient(135deg, var(--cyan-500), #0891B2);
+}
+.platform-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-text-mute);
+  background: var(--slate-50);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--slate-200);
+  font-variant-numeric: tabular-nums;
+}
+.platform-card:hover .platform-num {
+  color: var(--color-primary);
+  border-color: var(--blue-200);
+  background: var(--blue-50);
+}
+.platform-card--alt:hover .platform-num {
+  color: var(--cyan-500);
+  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.platform-name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.platform-host {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  margin-bottom: 28px;
+  width: fit-content;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  z-index: 1;
+}
+.platform-host::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green-500);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.platform-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-radius: 14px;
+  background: var(--gradient-hero);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: all 0.35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 24px -6px rgba(49, 130, 246, 0.35);
+  margin-top: auto;
+}
+.platform-card--alt .platform-btn {
+  background: linear-gradient(135deg, var(--cyan-500), #0891B2);
+  box-shadow: 0 10px 24px -6px rgba(6, 182, 212, 0.4);
+}
+.platform-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.7s var(--ease-out);
+}
+.platform-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -6px rgba(49, 130, 246, 0.45);
+}
+.platform-card--alt .platform-btn:hover {
+  box-shadow: 0 14px 30px -6px rgba(6, 182, 212, 0.5);
+}
+.platform-btn:hover::before { transform: translateX(100%); }
+.platform-btn-arrow {
+  font-size: 22px;
+  font-weight: 700;
+  transition: transform 0.3s var(--ease-out);
+}
+.platform-btn:hover .platform-btn-arrow { transform: translate(6px, -3px); }
+
+/* 관리자페이지 링크 카드 (2개) - legacy (사용 중단) */
 .admin-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2048,6 +2344,8 @@ img { max-width: 100%; display: block; }
   .acc-sub { grid-column: 2; grid-row: 2; font-size: 12px; }
   .acc-title { font-size: 15px; }
   .acc-body > * { padding-left: 20px !important; padding-right: 20px !important; }
+  .acc-body ul li, .acc-body ol li { font-size: 14px; }
+  .acc-note { margin-left: 20px !important; margin-right: 20px !important; }
   .course-head.acc-head { padding: 22px 20px; }
   .course-name { font-size: 17px; }
   .course-summary { font-size: 13px; }
@@ -2060,10 +2358,13 @@ img { max-width: 100%; display: block; }
   }
   .course-dl dt { margin-top: 8px; }
   .course-dl dt:first-child { margin-top: 0; }
-  .course-steps { padding-left: 40px !important; }
   .admin-card { padding: 32px 24px; }
   .admin-card-left h3 { font-size: 22px; }
   .admin-links { grid-template-columns: 1fr; }
+  .platform-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+  .platform-card { padding: 28px 24px 24px; }
+  .platform-name { font-size: 20px; }
+  .platform-ico { width: 60px; height: 60px; font-size: 30px; border-radius: 16px; }
   .complete-card { padding: 28px 24px; }
   .complete-card h3 { font-size: 19px; }
   .cta-btn { min-width: 100%; padding: 18px 22px; }
