@@ -541,38 +541,42 @@ img { max-width: 100%; display: block; }
 .hero-card {
   position: absolute;
   background: #fff;
-  padding: 24px 28px;
+  padding: 22px 28px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   display: flex;
   align-items: center;
   gap: 16px;
-  min-width: 240px;
+  min-width: 220px;
   transition: transform 0.5s var(--ease-out);
   animation: float-card 6s ease-in-out infinite;
+  border-left: 4px solid var(--color-primary);
 }
-.hero-card-icon {
-  width: 52px; height: 52px;
-  border-radius: 14px;
-  background: var(--gradient-hero);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px;
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(49, 130, 246, 0.3);
-}
+.hero-card--2 { border-left-color: var(--cyan-500); }
+.hero-card--3 { border-left-color: var(--color-primary-dark); }
 .hero-card-body { flex: 1; min-width: 0; }
 .hero-card-label {
+  display: inline-block;
   font-size: 11px;
-  font-weight: 700;
-  color: var(--color-primary);
-  letter-spacing: 0.1em;
-  margin-bottom: 4px;
+  font-weight: 800;
+  color: #fff;
+  background: var(--gradient-hero);
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(49, 130, 246, 0.3);
+}
+.hero-card--2 .hero-card-label {
+  background: linear-gradient(135deg, var(--cyan-500), #0891B2);
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
 }
 .hero-card-title {
   font-weight: 800;
-  font-size: 15px;
-  color: var(--color-text);
+  font-size: 18px;
+  color: var(--color-deep);
   white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 .hero-card--1 {
   top: 20px; left: 10px;
@@ -1806,6 +1810,77 @@ img { max-width: 100%; display: block; }
   position: relative;
   z-index: 1;
 }
+/* 플랫폼별 담당 교육 박스 (역할 구분) */
+.platform-role {
+  background: linear-gradient(135deg, var(--blue-50), rgba(6, 182, 212, 0.06));
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.platform-card--alt .platform-role {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(49, 130, 246, 0.06));
+  border-color: rgba(6, 182, 212, 0.25);
+}
+.platform-role-label {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.platform-role-label::before {
+  content: "📋";
+  font-size: 14px;
+}
+.platform-card--alt .platform-role-label {
+  color: var(--cyan-500);
+}
+.platform-role-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.platform-role-list li {
+  list-style: none !important;
+  padding-left: 24px;
+  position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-deep);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.platform-role-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.platform-card--alt .platform-role-list li::before {
+  background: var(--cyan-500);
+}
+
 .platform-host {
   display: inline-flex;
   align-items: center;
@@ -2478,17 +2553,20 @@ img { max-width: 100%; display: block; }
     align-items: center;
     text-align: center;
     min-width: 0;
-    padding: 20px 12px;
-    gap: 10px;
+    padding: 18px 12px;
+    gap: 8px;
     box-shadow: var(--shadow-sm);
+    border-left: none;
+    border-top: 3px solid var(--color-primary);
   }
+  .hero-card--2 { border-top-color: var(--cyan-500); }
+  .hero-card--3 { border-top-color: var(--color-primary-dark); }
   .hero-card--1, .hero-card--2, .hero-card--3 {
     top: auto; left: auto; right: auto; bottom: auto;
   }
-  .hero-card-icon { width: 44px; height: 44px; font-size: 22px; }
   .hero-card-body { text-align: center; min-width: 0; }
-  .hero-card-title { font-size: 13px; white-space: normal; line-height: 1.35; }
-  .hero-card-label { font-size: 10px; margin-bottom: 2px; }
+  .hero-card-title { font-size: 14px; white-space: normal; line-height: 1.35; letter-spacing: -0.02em; }
+  .hero-card-label { font-size: 10px; margin-bottom: 6px; padding: 2px 8px; }
   .hero-stats {
     position: static;
     margin: 18px auto 0;
@@ -2528,10 +2606,9 @@ img { max-width: 100%; display: block; }
   .section-title { font-size: 28px; }
   .hero-title { font-size: 34px; letter-spacing: -0.04em; }
   /* 폰 사이즈 — 카드 더 촘촘하게 */
-  .hero-card { padding: 14px 8px; gap: 6px; }
-  .hero-card-icon { width: 36px; height: 36px; font-size: 18px; border-radius: 10px; }
-  .hero-card-title { font-size: 11.5px; }
-  .hero-card-label { font-size: 9px; }
+  .hero-card { padding: 14px 8px; gap: 4px; }
+  .hero-card-title { font-size: 12.5px; }
+  .hero-card-label { font-size: 9px; padding: 2px 7px; margin-bottom: 4px; }
   .hero-stats-num { font-size: 20px; }
   /* 마감 배너 모바일 */
   .deadline-banner {
