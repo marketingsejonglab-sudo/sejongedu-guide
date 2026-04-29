@@ -1601,6 +1601,724 @@ img { max-width: 100%; display: block; }
 .course-steps { margin-bottom: 20px; }
 .course-steps li { font-size: 14.5px !important; }
 
+/* '자세히 보기' 링크 (코스 아코디언 하단) */
+.course-detail-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 32px 0;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--cyan-500) 100%);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 8px 20px rgba(49, 130, 246, 0.28);
+  position: relative;
+  overflow: hidden;
+}
+.course-detail-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.28) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.7s var(--ease-out);
+}
+.course-detail-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(49, 130, 246, 0.38);
+}
+.course-detail-link:hover::before { transform: translateX(100%); }
+.course-detail-arrow {
+  font-size: 20px;
+  transition: transform 0.3s var(--ease-out);
+}
+.course-detail-link:hover .course-detail-arrow { transform: translate(5px, -2px); }
+
+/* ============================================================
+   상세 페이지 (courses/*.html)
+============================================================ */
+
+/* LMS 진도율 확인 박스 (상세 페이지 상단) */
+.lms-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, var(--blue-50) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid var(--blue-100);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+.lms-info-box--alt {
+  border-left-color: var(--cyan-500);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, var(--blue-50) 100%);
+}
+.lms-info-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.lms-info-icon { font-size: 32px; flex-shrink: 0; }
+.lms-info-text { flex: 1; min-width: 0; }
+.lms-info-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.lms-info-link {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-deep);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.lms-info-link:hover { color: var(--color-primary); }
+.lms-info-creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--blue-200);
+}
+.lms-info-cred {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid var(--blue-100);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cred-label {
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.cred-value { color: var(--color-deep); }
+
+/* Alert banner (관리감독자 - 필수 교육 강조) */
+.alert-banner {
+  display: flex;
+  gap: 20px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, #FFF7ED 0%, #FEF3C7 100%);
+  border: 1px solid #FDE68A;
+  border-left: 4px solid var(--amber-500);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+.alert-banner-icon { font-size: 38px; flex-shrink: 0; }
+.alert-banner-text { flex: 1; min-width: 0; }
+.alert-banner-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #92400E;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.alert-banner-text p {
+  font-size: 15px;
+  color: #78350F;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+.alert-banner-strong {
+  font-weight: 700 !important;
+  color: #92400E !important;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  margin-top: 4px !important;
+}
+
+/* 정보 표 (info-table) */
+.info-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  background: #fff;
+  margin: 16px 0 24px;
+}
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 640px;
+}
+.info-table--small { min-width: 360px; }
+.info-table thead th {
+  padding: 14px 16px;
+  background: var(--slate-50);
+  border-bottom: 2px solid var(--blue-100);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-align: left;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.info-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--slate-100);
+  color: var(--slate-800);
+  line-height: 1.55;
+  vertical-align: top;
+}
+.info-table tbody tr:last-child td { border-bottom: none; }
+.info-table tbody tr:hover { background: var(--blue-50); }
+.info-table tbody tr.info-table-emphasis {
+  background: linear-gradient(90deg, var(--blue-50), rgba(6, 182, 212, 0.06));
+}
+.info-table tbody tr.info-table-emphasis:hover { background: linear-gradient(90deg, var(--blue-100), rgba(6, 182, 212, 0.12)); }
+.info-table strong { color: var(--color-deep); font-weight: 700; }
+
+/* Callout box (✅ 포함 업종 등) */
+.callout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+.callout {
+  background: linear-gradient(135deg, #ECFEFF 0%, var(--blue-50) 100%);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+}
+.callout-head {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.callout p {
+  font-size: 14.5px;
+  color: var(--slate-800);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.callout ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.callout ul li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14.5px;
+  color: var(--slate-800);
+  line-height: 1.55;
+}
+.callout ul li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+.callout-foot {
+  font-size: 13px !important;
+  color: var(--color-text-sub) !important;
+  padding-top: 12px;
+  border-top: 1px dashed var(--blue-200);
+  margin-top: 4px !important;
+}
+
+/* Feature box (💡 특별 자격요건, 왜 온라인 교육이 좋은가? 등) */
+.feature-box {
+  background: linear-gradient(135deg, var(--blue-50) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  padding: 26px 30px;
+  margin: 16px 0 20px;
+}
+.feature-box--alt {
+  background: linear-gradient(135deg, #ECFEFF 0%, var(--blue-50) 100%);
+  border-color: rgba(6, 182, 212, 0.25);
+}
+.feature-box h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-deep);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.feature-box ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.feature-box ul li {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--slate-800);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  list-style: none;
+}
+.feature-box strong { color: var(--color-deep); }
+.feature-foot {
+  margin-top: 14px !important;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  font-size: 14px !important;
+  color: var(--color-deep) !important;
+  text-align: center;
+}
+
+/* FAQ */
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: var(--blue-200); }
+.faq-q {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: var(--color-deep) !important;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px !important;
+  display: flex;
+  align-items: center;
+  gap: 0 !important;
+  text-transform: none !important;
+}
+.faq-q::before { display: none !important; }
+.faq-a { padding-left: 0; }
+.faq-a p { font-size: 14.5px; color: var(--slate-800); line-height: 1.7; margin-bottom: 8px; }
+.faq-a ul { padding-left: 22px; margin-bottom: 10px; list-style: disc; }
+.faq-a ul li { font-size: 14.5px; color: var(--slate-800); line-height: 1.65; margin-bottom: 4px; }
+.faq-a strong { color: var(--color-primary); font-weight: 800; }
+.faq-tip {
+  padding: 10px 14px;
+  background: var(--blue-50);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 8px;
+  font-weight: 600 !important;
+  margin: 10px 0 !important;
+}
+
+/* Score box (수료 기준) */
+.score-box {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-top: 14px;
+}
+.score-head {
+  font-size: 13px !important;
+  font-weight: 800;
+  color: var(--cyan-400) !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 18px 0 10px !important;
+}
+.score-head:first-child { margin-top: 0 !important; }
+.score-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+.score-list li {
+  font-size: 14.5px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  line-height: 1.7;
+  margin-bottom: 4px;
+  list-style: none !important;
+}
+.score-list li strong {
+  color: var(--cyan-400) !important;
+  font-weight: 800;
+}
+
+/* 상세 페이지 — 추가 헬퍼 클래스 */
+.detail-h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-deep);
+  letter-spacing: -0.01em;
+  margin: 28px 0 12px;
+}
+.detail-h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin: 20px 0 8px;
+}
+.detail-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.detail-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--slate-800);
+}
+.detail-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+.detail-list--check li::before {
+  content: "✔";
+  background: transparent;
+  color: var(--color-primary);
+  width: auto; height: auto;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  font-weight: 800;
+  font-size: 14px;
+}
+.detail-list--warn li::before {
+  content: "✔";
+  background: transparent;
+  color: var(--green-500);
+  width: auto; height: auto;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  font-weight: 800;
+  font-size: 14px;
+}
+.detail-list--num {
+  counter-reset: detail-num;
+}
+.detail-list--num li {
+  counter-increment: detail-num;
+  padding-left: 32px;
+}
+.detail-list--num li::before {
+  content: counter(detail-num);
+  background: var(--color-primary);
+  color: #fff;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 4px;
+  left: 0;
+}
+.detail-emphasis {
+  font-size: 15.5px !important;
+  color: var(--color-deep) !important;
+  font-weight: 600;
+  background: var(--blue-50);
+  padding: 12px 16px !important;
+  border-radius: 10px;
+  margin: 14px 0 !important;
+}
+.detail-note {
+  font-size: 14px !important;
+  color: var(--color-text-sub) !important;
+  font-style: italic;
+}
+.detail-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: var(--gradient-hero);
+  color: #fff !important;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 12px 0;
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 8px 18px rgba(49, 130, 246, 0.28);
+}
+.detail-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(49, 130, 246, 0.4);
+}
+.detail-link-btn-arrow { font-size: 18px; }
+.text-link {
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-primary);
+  text-decoration: none;
+}
+.text-link:hover { background: var(--blue-50); }
+
+/* Course info grid (환급과정 - 교육비/수료조건) */
+.course-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+.course-info-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+}
+.course-info-head {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.course-info-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.course-info-card > ul > li {
+  font-size: 14.5px;
+  color: var(--slate-800);
+  line-height: 1.7;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+.course-info-card > ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+.course-info-card ul ul {
+  margin-top: 6px;
+  padding-left: 4px;
+}
+.course-info-card ul ul li {
+  padding-left: 16px;
+  font-size: 13.5px;
+  color: var(--color-text-sub);
+}
+.course-info-card ul ul li::before {
+  content: "─";
+  color: var(--color-text-mute);
+}
+.highlight {
+  color: var(--color-primary) !important;
+  background: var(--blue-50);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .lms-info-box { padding: 20px 22px; }
+  .lms-info-icon { font-size: 28px; }
+  .lms-info-link { font-size: 15px; }
+  .alert-banner { flex-direction: column; padding: 22px 24px; gap: 14px; }
+  .alert-banner-icon { font-size: 32px; }
+  .alert-banner-title { font-size: 18px; }
+  .info-table { font-size: 13px; }
+  .info-table thead th, .info-table tbody td { padding: 10px 12px; }
+  .callout-grid { grid-template-columns: 1fr; }
+  .feature-box { padding: 20px 22px; }
+  .feature-box ul li { padding: 10px 14px; font-size: 14px; }
+  .faq-item { padding: 18px 20px; }
+  .faq-q { font-size: 15px !important; }
+  .score-box { padding: 20px 22px; }
+  .course-info-grid { grid-template-columns: 1fr; }
+}
+.detail-main {
+  padding: 80px 0 100px;
+  min-height: 60vh;
+  background: var(--color-bg-alt);
+}
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  margin-bottom: 32px;
+  transition: all 0.25s var(--ease-out);
+}
+.detail-back:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateX(-3px);
+}
+.detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 40px 44px;
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+}
+.detail-hero-ico {
+  width: 88px; height: 88px;
+  border-radius: 24px;
+  background: var(--gradient-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44px;
+  flex-shrink: 0;
+}
+.detail-hero-body { min-width: 0; }
+.detail-title {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--color-deep);
+  margin: 12px 0 10px;
+}
+.detail-summary {
+  font-size: 17px;
+  color: var(--color-text-sub);
+  line-height: 1.55;
+  font-weight: 500;
+}
+.detail-section {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  margin-bottom: 20px;
+}
+.detail-h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-deep);
+  margin-bottom: 22px;
+}
+.detail-dl {
+  margin: 0 !important;
+}
+.detail-steps {
+  padding-left: 0 !important;
+  margin: 0 !important;
+  list-style: none;
+  counter-reset: detail-step;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.detail-steps li {
+  list-style: none;
+  counter-increment: detail-step;
+  padding-left: 46px;
+  position: relative;
+  font-size: 15.5px !important;
+  line-height: 1.7;
+  color: var(--slate-800);
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+.detail-steps li::before {
+  content: counter(detail-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--blue-50);
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.detail-placeholder {
+  padding: 56px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--slate-50), var(--blue-50));
+  border: 1px dashed var(--blue-200);
+  border-radius: var(--radius-md);
+}
+.detail-placeholder-ico {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+.detail-placeholder h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-deep);
+  margin-bottom: 8px;
+}
+.detail-placeholder p {
+  font-size: 14.5px;
+  color: var(--color-text-sub);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .course-detail-link { margin: 16px 20px 0; padding: 16px 20px; font-size: 14px; }
+  .detail-main { padding: 60px 0 80px; }
+  .detail-hero { flex-direction: column; align-items: flex-start; padding: 32px 28px; gap: 20px; }
+  .detail-hero-ico { width: 72px; height: 72px; font-size: 36px; border-radius: 20px; }
+  .detail-title { font-size: 30px; }
+  .detail-summary { font-size: 15px; }
+  .detail-section { padding: 28px 24px; }
+  .detail-h2 { font-size: 19px; }
+  .detail-steps li { font-size: 14.5px !important; padding-left: 42px; }
+  .detail-placeholder { padding: 40px 24px; }
+}
+
 /* ============================================================
    섹션 3: 관리자페이지
 ============================================================ */
