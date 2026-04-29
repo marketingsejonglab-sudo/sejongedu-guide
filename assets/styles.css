@@ -4508,3 +4508,154 @@ img { max-width: 100%; display: block; }
   .detail-figure { padding: 14px 12px 12px; margin: 16px 0 6px; }
   .detail-figure-caption { font-size: 13px; margin-top: 10px; }
 }
+
+/* =========================================================
+   모바일 표 → 카드 리스트 변환 (50대+ 가독성)
+   대상: .info-table--cards 클래스가 부여된 큰 표
+   < 900px에서 thead 숨기고 각 행을 세로 카드로 표출
+   각 표마다 nth-child 기반 라벨 매핑 (--m1 / --m2 / --s1)
+   ========================================================= */
+@media (max-width: 900px) {
+  /* 공통 — 표 → 카드 변환 */
+  .info-table-wrap:has(.info-table--cards) {
+    overflow: visible;
+    border: none;
+    background: transparent;
+    margin: 16px 0 24px;
+    padding: 0;
+    box-shadow: none;
+  }
+  .info-table--cards {
+    min-width: 0 !important;
+    display: block;
+    width: 100%;
+    border-collapse: separate;
+  }
+  .info-table--cards thead { display: none; }
+  .info-table--cards tbody { display: block; }
+  .info-table--cards tbody tr {
+    display: block;
+    background: #fff;
+    border: 1.5px solid var(--slate-200);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-xs);
+  }
+  .info-table--cards tbody tr.info-table-emphasis {
+    border-left-color: var(--amber-500);
+    background: linear-gradient(135deg, #FEF3C7 0%, #FFEDD5 100%);
+  }
+  .info-table--cards tbody tr:hover { background: #fff; }
+  .info-table--cards tbody tr.info-table-emphasis:hover {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FFEDD5 100%);
+  }
+  .info-table--cards tbody td {
+    display: block;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+    color: var(--slate-800);
+    white-space: normal;
+    vertical-align: baseline;
+  }
+  .info-table--cards tbody td::before {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 12px 0 4px;
+  }
+
+  /* === mandatory 표 1: 법정의무교육 종류 (6컬럼) === */
+  /* 1번 td: 구분 번호 → 좌상단 chip */
+  .info-table--m1 tbody td:nth-child(1) {
+    display: inline-block;
+    background: var(--blue-50);
+    color: var(--color-primary);
+    font-size: 11px !important;
+    font-weight: 800;
+    padding: 4px 10px !important;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    line-height: 1 !important;
+  }
+  .info-table--m1 tbody tr.info-table-emphasis td:nth-child(1) {
+    background: rgba(245, 158, 11, 0.18);
+    color: #B45309;
+  }
+  .info-table--m1 tbody td:nth-child(1)::before { display: none; }
+  /* 2번 td: 교육명 → 카드 헤더 */
+  .info-table--m1 tbody td:nth-child(2) {
+    font-size: 17px !important;
+    font-weight: 800;
+    color: var(--color-deep);
+    line-height: 1.4 !important;
+    margin: 0 0 12px;
+    padding: 0 0 12px !important;
+    border-bottom: 1px solid var(--slate-100) !important;
+  }
+  .info-table--m1 tbody td:nth-child(2)::before { display: none; }
+  .info-table--m1 tbody td:nth-child(3)::before { content: "법적 근거"; }
+  .info-table--m1 tbody td:nth-child(4)::before { content: "교육 대상"; }
+  .info-table--m1 tbody td:nth-child(5)::before { content: "교육 주기"; }
+  .info-table--m1 tbody td:nth-child(6)::before { content: "미이행 시 제재"; }
+
+  /* === mandatory 표 2: 신고의무자교육 종류 (5컬럼) === */
+  .info-table--m2 tbody td:nth-child(1) {
+    display: inline-block;
+    background: var(--blue-50);
+    color: var(--color-primary);
+    font-size: 11px !important;
+    font-weight: 800;
+    padding: 4px 10px !important;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    line-height: 1 !important;
+  }
+  .info-table--m2 tbody tr.info-table-emphasis td:nth-child(1) {
+    background: rgba(245, 158, 11, 0.18);
+    color: #B45309;
+  }
+  .info-table--m2 tbody td:nth-child(1)::before { display: none; }
+  .info-table--m2 tbody td:nth-child(2) {
+    font-size: 17px !important;
+    font-weight: 800;
+    color: var(--color-deep);
+    line-height: 1.4 !important;
+    margin: 0 0 12px;
+    padding: 0 0 12px !important;
+    border-bottom: 1px solid var(--slate-100) !important;
+  }
+  .info-table--m2 tbody td:nth-child(2)::before { display: none; }
+  .info-table--m2 tbody td:nth-child(3)::before { content: "법적 근거"; }
+  .info-table--m2 tbody td:nth-child(4)::before { content: "주요 대상 직군"; }
+  .info-table--m2 tbody td:nth-child(5)::before { content: "교육 주기"; }
+
+  /* === supervisor 표: 관련 법령 정리 (4컬럼) === */
+  /* 1번 td: 카테고리 → 카드 헤더 */
+  .info-table--s1 tbody td:nth-child(1) {
+    font-size: 17px !important;
+    font-weight: 800;
+    color: var(--color-deep);
+    line-height: 1.4 !important;
+    margin: 0 0 12px;
+    padding: 0 0 12px !important;
+    border-bottom: 1px solid var(--slate-100) !important;
+  }
+  .info-table--s1 tbody td:nth-child(1)::before { display: none; }
+  .info-table--s1 tbody td:nth-child(2)::before { content: "법령"; }
+  .info-table--s1 tbody td:nth-child(3)::before { content: "조항"; }
+  .info-table--s1 tbody td:nth-child(4)::before { content: "핵심 내용"; }
+
+  /* info-table-link (산업안전보건교육 행) — 카드 헤더 안에서 자연스러운 링크 */
+  .info-table--cards tbody td:nth-child(2) .info-table-link {
+    font-size: 17px;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+  }
+}
