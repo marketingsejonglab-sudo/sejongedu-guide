@@ -3706,3 +3706,368 @@ img { max-width: 100%; display: block; }
   .course-detail-wrap p { font-size: 14.5px; }
   .course-detail-wrap .detail-list li, .course-detail-wrap ul li, .course-detail-wrap ol li { font-size: 14.5px; }
 }
+
+/* =========================================================
+   가독성 폴리시 v2 — 50대+ HR 담당자 친화 (2026-04)
+   목표:
+   1) 본문 글자 +1~1.5px 일괄 증량
+   2) line-height 1.7 → 1.8~1.85 (한글 호흡)
+   3) 헤딩 좌측 컬러 액센트 바 — 위계 명확화
+   4) 박스 안 박스 padding 정돈 → 답답함 해소
+   5) 표 글자 보강 (mobile 13.5 → 14)
+   ========================================================= */
+
+/* 1) 코스 상세 본문 — 가독성 +1px 증량 */
+.course-detail-wrap p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  margin: 0 0 16px;
+  color: var(--slate-800);
+  letter-spacing: -0.005em;
+}
+.course-detail-wrap > .detail-section ul li,
+.course-detail-wrap > .detail-section ol li {
+  font-size: 16px;
+  line-height: 1.85;
+}
+.course-detail-wrap .detail-list { gap: 10px; margin-bottom: 18px; }
+.course-detail-wrap .detail-list li {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.course-detail-wrap .detail-list--check li,
+.course-detail-wrap .detail-list--warn li {
+  padding-left: 28px !important;
+}
+.course-detail-wrap .detail-list--check li::before,
+.course-detail-wrap .detail-list--warn li::before {
+  font-size: 16px !important;
+  top: 1px !important;
+}
+.course-detail-wrap .detail-list--num li {
+  font-size: 16.5px;
+  padding-left: 40px !important;
+  line-height: 1.8;
+  min-height: 28px;
+}
+.course-detail-wrap .detail-list--num li::before {
+  width: 26px !important;
+  height: 26px !important;
+  font-size: 12px !important;
+  top: 2px !important;
+}
+
+/* 2) 헤딩 위계 — 좌측 컬러 바 + 글자 보강 */
+.course-detail-wrap .detail-section {
+  padding: 34px 38px;
+}
+.course-detail-wrap .detail-section .detail-h2 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0 0 22px;
+  padding-left: 16px;
+  border-left: 5px solid var(--color-primary);
+}
+.course-detail-wrap .detail-section .detail-h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-deep);
+  letter-spacing: -0.015em;
+  margin: 28px 0 14px;
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.45;
+}
+.course-detail-wrap .detail-section .detail-h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: var(--cyan-500);
+  border-radius: 2px;
+}
+.course-detail-wrap .detail-section .detail-h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 22px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+/* 3) dl (한눈에 보기) 가독성 */
+.course-detail-wrap .course-dl dt {
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.course-detail-wrap .course-dl dd {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--slate-800);
+  font-weight: 500;
+}
+
+/* 4) 표 가독성 보강 */
+.course-detail-wrap .info-table thead th {
+  font-size: 13.5px;
+  padding: 14px 16px;
+  letter-spacing: 0.02em;
+}
+.course-detail-wrap .info-table tbody td {
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 14px 16px;
+}
+.course-detail-wrap .info-table--small tbody td {
+  font-size: 15.5px;
+}
+
+/* 5) 박스 컴포넌트 글자 보강 */
+.course-detail-wrap .callout {
+  padding: 24px 26px;
+}
+.course-detail-wrap .callout-head {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+.course-detail-wrap .callout p {
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+.course-detail-wrap .callout ul li {
+  font-size: 15.5px !important;
+  line-height: 1.75 !important;
+  padding-left: 18px !important;
+}
+.course-detail-wrap .callout-foot {
+  font-size: 14px !important;
+  line-height: 1.6;
+}
+
+.course-detail-wrap .feature-box {
+  padding: 28px 30px;
+}
+.course-detail-wrap .feature-box h4 {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+.course-detail-wrap .feature-box ul li {
+  font-size: 15.5px !important;
+  line-height: 1.8 !important;
+  padding: 14px 18px !important;
+}
+.course-detail-wrap .feature-foot {
+  font-size: 15px !important;
+  padding: 12px 16px !important;
+  line-height: 1.65 !important;
+}
+
+.course-detail-wrap .faq-item {
+  padding: 24px 28px;
+  margin-bottom: 14px;
+}
+.course-detail-wrap .faq-q {
+  font-size: 17px !important;
+  margin-bottom: 16px !important;
+  line-height: 1.5;
+}
+.course-detail-wrap .faq-a p {
+  font-size: 15.5px !important;
+  line-height: 1.75 !important;
+  margin-bottom: 10px !important;
+}
+.course-detail-wrap .faq-a ul li {
+  font-size: 15.5px !important;
+  line-height: 1.75 !important;
+  margin-bottom: 6px;
+}
+.course-detail-wrap .faq-tip {
+  font-size: 15px !important;
+  padding: 12px 16px !important;
+  line-height: 1.6 !important;
+  margin: 12px 0 !important;
+}
+
+.course-detail-wrap .score-box {
+  padding: 26px 30px;
+}
+.course-detail-wrap .score-head {
+  font-size: 13px !important;
+  margin: 20px 0 12px !important;
+}
+.course-detail-wrap .score-list li {
+  font-size: 15.5px !important;
+  line-height: 1.8 !important;
+  margin-bottom: 6px;
+}
+
+.course-detail-wrap .course-info-card {
+  padding: 24px 26px;
+}
+.course-detail-wrap .course-info-head {
+  font-size: 16px !important;
+  margin-bottom: 14px;
+}
+.course-detail-wrap .course-info-card ul li {
+  font-size: 15.5px !important;
+  line-height: 1.8 !important;
+  margin-bottom: 8px;
+}
+.course-detail-wrap .course-info-card ul ul li {
+  font-size: 14.5px !important;
+}
+
+/* 6) 강조/주석 스타일 - detail-emphasis & detail-note */
+.course-detail-wrap .detail-emphasis {
+  font-size: 16px !important;
+  padding: 14px 18px !important;
+  line-height: 1.75;
+  margin: 16px 0 !important;
+}
+.course-detail-wrap .detail-note {
+  font-size: 14.5px !important;
+  font-style: normal;
+  line-height: 1.7 !important;
+  color: var(--color-text-sub) !important;
+  margin: 8px 0 14px !important;
+}
+
+/* 7) lms-info-box / alert-banner 글자 보강 */
+.lms-info-box {
+  padding: 26px 30px;
+}
+.lms-info-label {
+  font-size: 12.5px;
+  margin-bottom: 8px;
+}
+.lms-info-link {
+  font-size: 18px;
+}
+.lms-info-cred .cred-value {
+  font-size: 15.5px;
+}
+
+.alert-banner {
+  padding: 26px 30px;
+}
+.alert-banner-title {
+  font-size: 21px;
+  line-height: 1.4;
+}
+.alert-banner-text p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.alert-banner-strong {
+  font-size: 16.5px;
+  margin-top: 8px;
+}
+
+/* 8) 메인 페이지 - 섹션 1 아코디언 본문 가독성 (자살예방·관리감독자·인신매매 등) */
+.acc-body p {
+  font-size: 16px;
+  line-height: 1.85;
+  margin-bottom: 18px;
+  color: var(--slate-800);
+  letter-spacing: -0.005em;
+}
+.acc-body ul li,
+.acc-body ol li {
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+.acc-body h4 {
+  font-size: 13px;
+  margin-top: 30px;
+}
+.acc-note {
+  font-size: 15.5px !important;
+  line-height: 1.75 !important;
+  padding: 18px 22px !important;
+}
+
+/* 9) 섹션 1 요청 카드 / 양식 카드 가독성 */
+.request-card p,
+.request-card li {
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+.request-card ul li {
+  margin-bottom: 6px;
+}
+.notice-list li {
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+.section-sub {
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* 10) admin/platform 카드 가독성 */
+.platform-host { font-size: 14px; }
+.platform-role-list li { font-size: 15px; line-height: 1.7; }
+.platform-hint { font-size: 13px; line-height: 1.55; }
+.login-row { gap: 14px; align-items: center; }
+.login-label { font-size: 13px; font-weight: 800; }
+.login-value { font-size: 16px; line-height: 1.5; }
+
+/* 11) CTA 가독성 보강 */
+.cta-btn b { font-size: 17px; }
+.cta-btn small { font-size: 14px; }
+.cta-hours-item { font-size: 14.5px; }
+
+/* 12) 모바일 가독성 — 아래 한도까지 보강 */
+@media (max-width: 900px) {
+  .course-detail-wrap .detail-section { padding: 24px 22px; }
+  .course-detail-wrap .detail-section .detail-h2 {
+    font-size: 18px;
+    padding-left: 12px;
+    border-left-width: 4px;
+    margin-bottom: 18px;
+  }
+  .course-detail-wrap .detail-section .detail-h3 {
+    font-size: 16px;
+    padding-left: 10px;
+    margin: 22px 0 12px;
+  }
+  .course-detail-wrap .detail-section .detail-h4 { font-size: 14.5px; }
+  .course-detail-wrap p { font-size: 15.5px; line-height: 1.8; }
+  .course-detail-wrap > .detail-section ul li,
+  .course-detail-wrap > .detail-section ol li,
+  .course-detail-wrap .detail-list li { font-size: 15px !important; line-height: 1.8 !important; }
+  .course-detail-wrap .detail-list--num li { font-size: 15.5px; padding-left: 36px !important; }
+  .course-detail-wrap .course-dl dd { font-size: 15.5px; }
+  .course-detail-wrap .info-table thead th { font-size: 12.5px; padding: 11px 12px; }
+  .course-detail-wrap .info-table tbody td { font-size: 14px; line-height: 1.65; padding: 11px 12px; }
+  .course-detail-wrap .callout { padding: 20px 22px; }
+  .course-detail-wrap .callout p,
+  .course-detail-wrap .callout ul li { font-size: 14.5px !important; }
+  .course-detail-wrap .feature-box { padding: 22px 22px; }
+  .course-detail-wrap .feature-box h4 { font-size: 16.5px; }
+  .course-detail-wrap .feature-box ul li { font-size: 14.5px !important; padding: 12px 14px !important; }
+  .course-detail-wrap .faq-item { padding: 20px 22px; }
+  .course-detail-wrap .faq-q { font-size: 15.5px !important; }
+  .course-detail-wrap .faq-a p,
+  .course-detail-wrap .faq-a ul li { font-size: 14.5px !important; }
+  .course-detail-wrap .score-list li { font-size: 14.5px !important; }
+  .course-detail-wrap .course-info-card ul li { font-size: 14.5px !important; }
+  .alert-banner-title { font-size: 19px; }
+  .alert-banner-text p { font-size: 15px; }
+  .lms-info-link { font-size: 16.5px; }
+  .acc-body p { font-size: 15px; }
+  .acc-body ul li, .acc-body ol li { font-size: 14.5px; }
+  .hero-sub { font-size: 16.5px; line-height: 1.75; }
+  .section-sub { font-size: 15.5px; }
+}
