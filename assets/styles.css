@@ -4071,3 +4071,292 @@ img { max-width: 100%; display: block; }
   .hero-sub { font-size: 16.5px; line-height: 1.75; }
   .section-sub { font-size: 15.5px; }
 }
+
+/* =========================================================
+   섹션 2 — 코스 네비게이션 카드 (course-nav-card)
+   각 카드 클릭 시 /courses/[name].html 로 internal navigation
+   ========================================================= */
+.course-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+}
+.course-nav-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px 32px;
+  background: #fff;
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+.course-nav-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(49,130,246,0.08) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.7s var(--ease-out);
+  pointer-events: none;
+}
+.course-nav-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+.course-nav-card:hover::after { transform: translateX(100%); }
+.course-nav-ico {
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  background: var(--gradient-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out);
+}
+.course-nav-card:hover .course-nav-ico {
+  transform: scale(1.05) rotate(-2deg);
+}
+.course-nav-meta { flex: 1; min-width: 0; }
+.course-nav-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--color-deep);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+.course-nav-summary {
+  font-size: 14.5px;
+  color: var(--color-text-sub);
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+}
+.course-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--blue-50);
+  color: var(--color-primary);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease-out);
+  letter-spacing: -0.01em;
+}
+.course-nav-card:hover .course-nav-cta {
+  background: var(--color-primary);
+  color: #fff;
+}
+.course-nav-cta-arrow {
+  font-size: 15px;
+  transition: transform 0.3s var(--ease-out);
+}
+.course-nav-card:hover .course-nav-cta-arrow { transform: translateX(4px); }
+
+@media (max-width: 900px) {
+  .course-nav-grid { grid-template-columns: 1fr; gap: 12px; }
+  .course-nav-card { padding: 22px 20px; gap: 16px; }
+  .course-nav-ico { width: 52px; height: 52px; font-size: 26px; border-radius: 14px; }
+  .course-nav-name { font-size: 17px; }
+  .course-nav-summary { font-size: 13.5px; }
+  .course-nav-cta { padding: 8px 12px; font-size: 12.5px; gap: 4px; }
+  .course-nav-cta-arrow { font-size: 13px; }
+}
+
+/* =========================================================
+   detail 페이지 가독성 폴리시 v2 — .detail-main 스코프 적용
+   (직전에 추가한 .course-detail-wrap 스코프 규칙을 detail
+    페이지에서도 동일하게 적용)
+   ========================================================= */
+
+/* 본문 - 글자 +1px, line-height 1.85 */
+.detail-main .detail-section p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  margin: 0 0 16px;
+  color: var(--slate-800);
+  letter-spacing: -0.005em;
+}
+.detail-main .detail-section > ul li,
+.detail-main .detail-section > ol li {
+  font-size: 16px;
+  line-height: 1.85;
+}
+.detail-main .detail-list { gap: 10px; margin-bottom: 18px; }
+.detail-main .detail-list li {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.detail-main .detail-list--check li,
+.detail-main .detail-list--warn li {
+  padding-left: 28px;
+}
+.detail-main .detail-list--check li::before,
+.detail-main .detail-list--warn li::before {
+  font-size: 16px;
+  top: 1px;
+}
+.detail-main .detail-list--num li {
+  font-size: 16.5px;
+  padding-left: 40px;
+  line-height: 1.8;
+  min-height: 28px;
+}
+.detail-main .detail-list--num li::before {
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+  top: 2px;
+}
+
+/* 헤딩 좌측 컬러 바 */
+.detail-main .detail-section { padding: 34px 38px; }
+.detail-main .detail-section .detail-h2 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0 0 22px;
+  padding-left: 16px;
+  border-left: 5px solid var(--color-primary);
+}
+.detail-main .detail-section .detail-h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-deep);
+  letter-spacing: -0.015em;
+  margin: 28px 0 14px;
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.45;
+}
+.detail-main .detail-section .detail-h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: var(--cyan-500);
+  border-radius: 2px;
+}
+.detail-main .detail-section .detail-h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 22px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+/* 한눈에 보기 dl */
+.detail-main .course-dl dt {
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.detail-main .course-dl dd {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--slate-800);
+  font-weight: 500;
+}
+
+/* 표 보강 */
+.detail-main .info-table thead th {
+  font-size: 13.5px;
+  padding: 14px 16px;
+  letter-spacing: 0.02em;
+}
+.detail-main .info-table tbody td {
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 14px 16px;
+}
+.detail-main .info-table--small tbody td { font-size: 15.5px; }
+
+/* 박스 컴포넌트 */
+.detail-main .callout { padding: 24px 26px; }
+.detail-main .callout-head { font-size: 16px; margin-bottom: 14px; }
+.detail-main .callout p { font-size: 15.5px; line-height: 1.75; }
+.detail-main .callout ul li { font-size: 15.5px; line-height: 1.75; padding-left: 18px; }
+.detail-main .callout-foot { font-size: 14px; line-height: 1.6; }
+
+.detail-main .feature-box { padding: 28px 30px; }
+.detail-main .feature-box h4 { font-size: 18px; margin-bottom: 18px; }
+.detail-main .feature-box ul li { font-size: 15.5px; line-height: 1.8; padding: 14px 18px; }
+.detail-main .feature-foot { font-size: 15px; padding: 12px 16px; line-height: 1.65; }
+
+.detail-main .faq-item { padding: 24px 28px; margin-bottom: 14px; }
+.detail-main .faq-q { font-size: 17px !important; margin-bottom: 16px !important; line-height: 1.5; }
+.detail-main .faq-a p { font-size: 15.5px; line-height: 1.75; margin-bottom: 10px; }
+.detail-main .faq-a ul li { font-size: 15.5px; line-height: 1.75; margin-bottom: 6px; }
+.detail-main .faq-tip { font-size: 15px; padding: 12px 16px; line-height: 1.6; margin: 12px 0; }
+
+.detail-main .score-box { padding: 26px 30px; }
+.detail-main .score-head { font-size: 13px !important; margin: 20px 0 12px !important; }
+.detail-main .score-list li { font-size: 15.5px !important; line-height: 1.8 !important; margin-bottom: 6px; }
+
+.detail-main .course-info-card { padding: 24px 26px; }
+.detail-main .course-info-head { font-size: 16px; margin-bottom: 14px; }
+.detail-main .course-info-card ul li { font-size: 15.5px; line-height: 1.8; margin-bottom: 8px; }
+.detail-main .course-info-card ul ul li { font-size: 14.5px; }
+
+/* 강조/주석 */
+.detail-main .detail-emphasis {
+  font-size: 16px !important;
+  padding: 14px 18px !important;
+  line-height: 1.75;
+  margin: 16px 0 !important;
+}
+.detail-main .detail-note {
+  font-size: 14.5px !important;
+  font-style: normal;
+  line-height: 1.7 !important;
+  color: var(--color-text-sub) !important;
+  margin: 8px 0 14px !important;
+}
+
+/* 모바일 — detail-main 스코프 */
+@media (max-width: 900px) {
+  .detail-main .detail-section { padding: 24px 22px; }
+  .detail-main .detail-section .detail-h2 {
+    font-size: 18px;
+    padding-left: 12px;
+    border-left-width: 4px;
+    margin-bottom: 18px;
+  }
+  .detail-main .detail-section .detail-h3 { font-size: 16px; padding-left: 10px; margin: 22px 0 12px; }
+  .detail-main .detail-section .detail-h4 { font-size: 14.5px; }
+  .detail-main .detail-section p { font-size: 15.5px; line-height: 1.8; }
+  .detail-main .detail-section > ul li,
+  .detail-main .detail-section > ol li,
+  .detail-main .detail-list li { font-size: 15px; line-height: 1.8; }
+  .detail-main .detail-list--num li { font-size: 15.5px; padding-left: 36px; }
+  .detail-main .course-dl dd { font-size: 15.5px; }
+  .detail-main .info-table thead th { font-size: 12.5px; padding: 11px 12px; }
+  .detail-main .info-table tbody td { font-size: 14px; line-height: 1.65; padding: 11px 12px; }
+  .detail-main .callout { padding: 20px 22px; }
+  .detail-main .callout p,
+  .detail-main .callout ul li { font-size: 14.5px; }
+  .detail-main .feature-box { padding: 22px 22px; }
+  .detail-main .feature-box h4 { font-size: 16.5px; }
+  .detail-main .feature-box ul li { font-size: 14.5px; padding: 12px 14px; }
+  .detail-main .faq-item { padding: 20px 22px; }
+  .detail-main .faq-q { font-size: 15.5px !important; }
+  .detail-main .faq-a p,
+  .detail-main .faq-a ul li { font-size: 14.5px; }
+  .detail-main .score-list li { font-size: 14.5px !important; }
+  .detail-main .course-info-card ul li { font-size: 14.5px; }
+}
