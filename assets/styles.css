@@ -1142,6 +1142,7 @@ img { max-width: 100%; display: block; }
 .download-ico--xls { background: linear-gradient(135deg, #10B981, #059669); }
 .download-ico--pdf { background: linear-gradient(135deg, #EF4444, #DC2626); }
 .download-ico--hwp { background: linear-gradient(135deg, #3182F6, #1B64DA); }
+.download-ico--img { background: linear-gradient(135deg, #F59E0B, #D97706); }
 
 .download-meta { flex: 1; min-width: 0; position: relative; z-index: 1; }
 .download-name {
@@ -4359,4 +4360,115 @@ img { max-width: 100%; display: block; }
   .detail-main .faq-a ul li { font-size: 14.5px; }
   .detail-main .score-list li { font-size: 14.5px !important; }
   .detail-main .course-info-card ul li { font-size: 14.5px; }
+}
+
+/* =========================================================
+   추가 컴포넌트 — info-table 행 링크 / callout--warn /
+   feature-box--warn / inline-cta
+   ========================================================= */
+
+/* 표 안의 셀 → 다른 페이지로 이동하는 링크 */
+.info-table-link-row { cursor: pointer; }
+.info-table-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-weight: 800;
+  border-bottom: 1.5px solid var(--color-primary);
+  padding-bottom: 1px;
+  transition: all 0.2s var(--ease-out);
+  letter-spacing: -0.01em;
+}
+.info-table-link:hover {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary-dark);
+}
+.info-table-link-arrow {
+  font-size: 13px;
+  transition: transform 0.2s var(--ease-out);
+}
+.info-table-link:hover .info-table-link-arrow { transform: translateX(3px); }
+
+/* 경고형 callout (인신매매 안내 등) */
+.callout--warn {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FFE4E6 100%);
+  border: 1px solid #FCD34D;
+  border-left: 4px solid var(--amber-500);
+  margin-top: 16px;
+}
+.callout--warn .callout-head { color: #B45309; }
+.callout--warn ul li::before { background: var(--amber-500) !important; }
+
+/* 경고형 feature-box (자체 수강 한계 강조) */
+.feature-box--warn {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FFEDD5 100%);
+  border: 1px solid #FCD34D;
+  border-left: 4px solid var(--amber-500);
+}
+.feature-box--warn h4 { color: #B45309; }
+
+/* 섹션 내부에 임베드되는 상담 CTA — 카카오톡/전화 */
+.inline-cta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+.inline-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.3s var(--ease-out);
+  font-weight: 700;
+}
+.inline-cta-btn--kakao {
+  background: #FEE500;
+  color: #191600;
+}
+.inline-cta-btn--kakao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(254, 229, 0, 0.4);
+}
+.inline-cta-btn--tel {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+.inline-cta-btn--tel:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(49, 130, 246, 0.32);
+}
+.inline-cta-ico {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.inline-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.inline-cta-text b {
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.inline-cta-text small {
+  font-size: 12.5px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+@media (max-width: 900px) {
+  .inline-cta { grid-template-columns: 1fr; gap: 10px; }
+  .inline-cta-btn { padding: 16px 18px; gap: 12px; }
+  .inline-cta-ico { font-size: 22px; }
+  .inline-cta-text b { font-size: 14.5px; }
+  .inline-cta-text small { font-size: 12px; }
 }
