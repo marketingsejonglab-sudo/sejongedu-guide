@@ -4472,3 +4472,39 @@ img { max-width: 100%; display: block; }
   .inline-cta-text b { font-size: 14.5px; }
   .inline-cta-text small { font-size: 12px; }
 }
+
+/* =========================================================
+   detail 페이지 — 캡처 이미지 / 다이어그램 (figure)
+   ========================================================= */
+.detail-figure {
+  margin: 20px 0 8px;
+  padding: 18px 18px 14px;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.detail-figure-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  margin: 0 auto;
+  display: block;
+}
+.detail-figure-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--color-text-sub);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+.detail-figure-caption strong {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .detail-figure { padding: 14px 12px 12px; margin: 16px 0 6px; }
+  .detail-figure-caption { font-size: 13px; margin-top: 10px; }
+}
