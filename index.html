@@ -313,31 +313,183 @@
               <span class="acc-chev">▾</span>
             </button>
             <div class="course-body acc-body">
-              <dl class="course-dl">
-                <dt>법적 근거</dt><dd>근로기준법·남녀고용평등법·개인정보보호법·장애인고용촉진법·산업안전보건법 등</dd>
-                <dt>교육 대상</dt><dd>전 직원 (1인 사업장 포함)</dd>
-                <dt>교육 주기</dt><dd>연 1회</dd>
-                <dt>교육 시간</dt><dd>과정별 1시간 이상</dd>
-              </dl>
-              <h4>수강 방법</h4>
-              <ol class="course-steps">
-                <li>관리자페이지 로그인 (ID/PW: 사업자등록번호)</li>
-                <li>직원별 수강 현황 확인</li>
-                <li>미수강자에게 수강 링크 전달</li>
-                <li>수료 후 관리자페이지에서 수료증 출력</li>
-              </ol>
-              <a href="./downloads/법정의무교육_안내문.pdf" download class="download-card download-card--sm inline">
-                <div class="download-ico download-ico--pdf">PDF</div>
-                <div class="download-meta">
-                  <div class="download-name">법정의무교육 안내문</div>
-                  <div class="download-sub">커리큘럼·일정표 포함</div>
+              <div class="course-detail-wrap">
+                <!-- LMS 진도율 확인 박스 -->
+                <div class="lms-info-box">
+                  <div class="lms-info-head">
+                    <span class="lms-info-icon">🎓</span>
+                    <div class="lms-info-text">
+                      <div class="lms-info-label">교육 진도율 확인하러 가기</div>
+                      <a href="https://www.sejongedu.sc.kr/companyMng/login" class="lms-info-link" target="_blank" rel="noopener">교육담당자 LMS 바로가기 →</a>
+                    </div>
+                  </div>
+                  <div class="lms-info-creds">
+                    <div class="lms-info-cred"><span class="cred-label">ID</span><span class="cred-value">사업자등록번호</span></div>
+                    <div class="lms-info-cred"><span class="cred-label">PW</span><span class="cred-value">사업자등록번호!</span></div>
+                  </div>
                 </div>
-                <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
-              </a>
-              <a href="./courses/mandatory.html" class="course-detail-link">
-                <span>법정의무교육 자세히 보기</span>
-                <span class="course-detail-arrow">→</span>
-              </a>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📋 한눈에 보기</h2>
+                  <dl class="course-dl detail-dl">
+                    <dt>법적 근거</dt><dd>근로기준법 · 남녀고용평등법 · 개인정보보호법 · 장애인고용촉진법 · 산업안전보건법 등</dd>
+                    <dt>교육 대상</dt><dd>전 직원 (1인 사업장 포함)</dd>
+                    <dt>교육 주기</dt><dd>연 1회</dd>
+                    <dt>교육 시간</dt><dd>과정별 1시간 이상</dd>
+                  </dl>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">🎓 법정의무교육 종류</h2>
+                  <div class="info-table-wrap">
+                    <table class="info-table">
+                      <thead>
+                        <tr>
+                          <th>구분</th>
+                          <th>교육명</th>
+                          <th>법적 근거</th>
+                          <th>교육 대상</th>
+                          <th>교육 주기</th>
+                          <th>미이행 시 제재</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>1</td><td><strong>개인정보보호교육</strong></td><td>개인정보 보호법 제28·29조</td><td>개인정보 처리 업무를 수행하는 모든 임직원</td><td>연 1회 이상</td><td>과태료 및 행정처분</td></tr>
+                        <tr><td>2</td><td><strong>직장 내 성희롱 예방교육</strong></td><td>남녀고용평등법 제13조</td><td>모든 사업장의 사업주 및 근로자 (5인 미만 포함)</td><td>연 1회 이상</td><td>500만 원 이하 과태료</td></tr>
+                        <tr><td>3</td><td><strong>장애인 인식개선교육</strong></td><td>장애인고용촉진 및 직업재활법 제5조의2</td><td>모든 사업장의 사업주 및 근로자</td><td>연 1회 이상</td><td>300만 원 이하 과태료</td></tr>
+                        <tr><td>4</td><td><strong>직장 내 괴롭힘 예방교육</strong></td><td>근로기준법 제76조의2</td><td>모든 사업장의 사업주 및 근로자</td><td>연 1회 이상 권장</td><td>사건 발생 시 행정·법적 불이익</td></tr>
+                        <tr><td>5</td><td>퇴직연금교육</td><td>근로자퇴직급여 보장법 제32조</td><td>퇴직연금제도 도입 사업장 근로자</td><td>연 1회 이상</td><td>1천만 원 이하 과태료</td></tr>
+                        <tr><td>6</td><td>산업안전보건교육</td><td>산업안전보건법 제29조</td><td>상시근로자 사용 사업장의 근로자</td><td>분기·반기·연간 (업종·직무별 상이)</td><td>500만 원 이하 과태료</td></tr>
+                        <tr><td>7</td><td><strong>신고의무자교육</strong></td><td>아동복지법 등 개별 법령</td><td>신고의무자 해당 직군 종사자</td><td>연 1회 이상</td><td>과태료 부과 가능</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">🖥️ 신고의무자교육 종류</h2>
+                  <div class="info-table-wrap">
+                    <table class="info-table">
+                      <thead>
+                        <tr>
+                          <th>구분</th>
+                          <th>교육명</th>
+                          <th>법적 근거</th>
+                          <th>주요 대상 직군</th>
+                          <th>교육 주기</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="info-table-emphasis"><td>1</td><td><strong>인신매매 예방교육</strong></td><td>성매매방지 및 피해자보호 등에 관한 법률 / 인신매매방지법</td><td>공공기관 종사자, 사회복지시설 종사자, 관련 업무 담당자 등</td><td>연 1회 이상</td></tr>
+                        <tr><td>2</td><td>아동학대 신고의무자 교육</td><td>아동복지법 제26조 / 아동학대범죄의 처벌 등에 관한 특례법</td><td>어린이집·유치원·학교 교직원, 의료인, 사회복지시설 종사자, 학원 종사자 등</td><td>연 1회 이상</td></tr>
+                        <tr><td>3</td><td>긴급복지지원 신고의무자 교육</td><td>긴급복지지원법 제7조</td><td>공공기관 종사자, 사회복지시설 종사자, 보건·의료 종사자 등</td><td>연 1회 이상</td></tr>
+                        <tr><td>4</td><td>노인학대 신고의무자 교육</td><td>노인복지법 제39조의6</td><td>노인요양시설·주야간보호센터 종사자, 의료인, 사회복지사 등</td><td>연 1회 이상</td></tr>
+                        <tr><td>5</td><td>아동·청소년 성범죄 신고의무자 교육</td><td>아동·청소년의 성보호에 관한 법률</td><td>교육기관·의료기관·복지시설 종사자, 상담·보호 관련 종사자</td><td>연 1회 이상</td></tr>
+                        <tr><td>6</td><td>장애인학대 신고의무자 교육</td><td>장애인복지법 제59조의4</td><td>장애인복지시설 종사자, 의료기관 종사자, 특수교육 종사자 등</td><td>연 1회 이상</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">🖥️ 기타 의무교육</h2>
+
+                  <h3 class="detail-h3">▪️ 통합재가급여 교육</h3>
+                  <p>하나의 기관에서 <strong>방문요양 · 방문목욕 · 방문간호 · 주야간보호</strong> 등 복수 재가급여 서비스를 통합 제공하는 장기요양급여 유형이며, 이에 따라 종사자 교육 역시 통합재가급여 교육으로 운영됩니다.</p>
+                  <p class="detail-note">※ 단일 서비스 교육이 아닌, <strong>통합 제공 체계에 맞춘 직무·인권·운영 중심 교육</strong></p>
+
+                  <div class="callout-grid">
+                    <div class="callout">
+                      <div class="callout-head">✅ 포함 업종</div>
+                      <ul>
+                        <li>방문요양</li>
+                        <li>방문목욕</li>
+                        <li>방문간호</li>
+                        <li>주·야간보호</li>
+                        <li>단기보호</li>
+                      </ul>
+                      <p class="callout-foot">※ 위 급여 중 <strong>2개 이상을 통합 운영</strong>하면 통합재가급여기관으로 분류 가능</p>
+                    </div>
+                    <div class="callout">
+                      <div class="callout-head">✅ 통합재가급여 교육 대상</div>
+                      <ul>
+                        <li>시설장</li>
+                        <li>사회복지사</li>
+                        <li>요양보호사</li>
+                        <li>간호사 / 간호조무사</li>
+                        <li>서비스 제공인력 전원</li>
+                      </ul>
+                      <p class="callout-foot">※ 직종별 개별 교육이 아닌 → <strong>통합재가급여 종사자 공통 교육</strong>으로 운영 가능</p>
+                    </div>
+                  </div>
+
+                  <h3 class="detail-h3">▪️ 자살예방교육</h3>
+                  <p><strong>자살예방교육</strong>은 자살 위험 신호를 조기에 인지하고, 위기 상황 발생 시 <strong>연결·개입·신고 역할을 수행할 수 있도록 하기 위한 법정 교육</strong>으로, 특정 업종·직군에 대해 의무화되어 있습니다.</p>
+
+                  <h4 class="detail-h4">🔹 법적 근거</h4>
+                  <div class="callout">
+                    <p><strong>자살예방 및 생명존중문화 조성을 위한 법률</strong></p>
+                    <p><strong>제17조 (자살예방교육 등)</strong> 국가 및 지방자치단체는 자살 예방을 위하여 관계 기관·시설 종사자 등에 대해 자살예방교육을 실시할 수 있으며, 대통령령으로 정하는 대상에 대해서는 교육을 의무화함.</p>
+                    <p><strong>자살예방 및 생명존중문화 조성을 위한 법령 시행령 제10조 (자살예방교육의 대상)</strong> 자살 위험군과 밀접하게 접촉하는 직군을 의무 교육 대상으로 규정.</p>
+                  </div>
+
+                  <h4 class="detail-h4">🔹 자살예방교육 의무 대상 업종</h4>
+                  <p><strong>① 보건·복지, 돌봄 분야 (핵심 대상)</strong></p>
+                  <div class="info-table-wrap">
+                    <table class="info-table info-table--small">
+                      <thead><tr><th>구분</th><th>업종</th></tr></thead>
+                      <tbody>
+                        <tr><td>노인</td><td>장기요양기관 (재가급여, 시설급여)</td></tr>
+                        <tr><td>아동·청소년</td><td>아동복지시설, 청소년시설</td></tr>
+                        <tr><td>장애인</td><td>장애인복지시설</td></tr>
+                        <tr><td>의료</td><td>병원, 의원, 정신의료기관</td></tr>
+                        <tr><td>사회복지</td><td>사회복지시설 전반</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p><strong>② 교육·상담·지도 분야</strong></p>
+                  <p><strong>③ 공공·안전·현장 대응 직군</strong></p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">🎯 세종에듀에서 법정의무교육</h2>
+
+                  <div class="feature-box">
+                    <h4>💡 특별한 자격요건이 필요한 교육</h4>
+                    <ul>
+                      <li><strong>▪️ 산업안전보건교육</strong><br />→ 국가에서 지정한 위탁교육기관에서만 가능, 관리감독자 교육을 받은 자 또는 안전관리업체에서 대행 가능</li>
+                      <li><strong>▪️ 장애인인식개선교육</strong><br />→ 30인 미만은 공인자료를 가지고 교육, 30인 이상 기업의 경우 국가에서 공인된 강사만 교육 가능</li>
+                    </ul>
+                  </div>
+
+                  <div class="feature-box feature-box--alt">
+                    <h4>💡 왜? 온라인 교육이 좋은가요?</h4>
+                    <ul>
+                      <li><strong>▪️ 기업 맞춤형 법정의무교육 통합 수강</strong><br />→ 사업장 규모와 업종에 따라 필요한 법정의무교육을 한 번에 구성하여 수강할 수 있어 불필요한 교육을 줄이고, 법적 필수 교육만 효율적으로 이수할 수 있습니다.</li>
+                      <li><strong>▪️ 교육 이력 및 수료증 관리의 효율성</strong><br />→ 교육 수강 이력과 수료증이 시스템에 자동 저장되어 최소 3년 이상 관리가 가능하며, 지도·점검, 감사, 행정 제출 시 즉시 증빙 자료로 활용할 수 있습니다.</li>
+                      <li><strong>▪️ 집체교육 운영의 현실적 한계 해소</strong><br />→ 오프라인 집체교육은 전 직원을 동일 시간·장소에 모으기 어려우며, 참석 확인 및 서명 관리에도 행정 부담이 큽니다.<br />→ 온라인 교육은 개별 수강 방식으로 운영되어 근무 형태와 일정에 관계없이 참여가 가능합니다.</li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">✅ 그 외 필수 교육이 있으신가요?</h2>
+                  <p>저희가 제공드리고 있는 법정의무교육·신고의무자교육 외에 직종별로 필수로 수강하셔야 하는 법정의무교육이 있다면 사전에 문의 부탁드립니다.</p>
+                  <p class="detail-note"><strong>예) CS교육, 기업재난관리교육, 기후환경대응교육 등</strong></p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📎 관련 자료</h2>
+                  <a href="./downloads/법정의무교육_안내문.pdf" download class="download-card">
+                    <div class="download-ico download-ico--pdf">PDF</div>
+                    <div class="download-meta">
+                      <div class="download-name">법정의무교육 안내문</div>
+                      <div class="download-sub">커리큘럼·일정표 포함</div>
+                    </div>
+                    <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
+                  </a>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -351,30 +503,140 @@
               <span class="acc-chev">▾</span>
             </button>
             <div class="course-body acc-body">
-              <dl class="course-dl">
-                <dt>법적 근거</dt><dd>산업안전보건법 제29조 · 시행규칙 제26조</dd>
-                <dt>교육 대상</dt><dd>5인 이상 사업장 전 근로자</dd>
-                <dt>교육 주기</dt><dd>분기별 (사무직 매반기, 그 외 매분기)</dd>
-                <dt>교육 시간</dt><dd>직종·반기별 3~6시간</dd>
-              </dl>
-              <h4>수강 방법</h4>
-              <ol class="course-steps">
-                <li>관리자페이지에서 수강 대상자 확인</li>
-                <li>분기별 교육 일정에 맞춰 온라인 수강</li>
-                <li>수료 확인은 고용노동부 사이트 또는 관리자페이지에서 가능</li>
-              </ol>
-              <a href="./downloads/산업안전보건교육_안내문.pdf" download class="download-card download-card--sm inline">
-                <div class="download-ico download-ico--pdf">PDF</div>
-                <div class="download-meta">
-                  <div class="download-name">산업안전보건교육 안내문</div>
-                  <div class="download-sub">분기별 일정·교육내용 포함</div>
+              <div class="course-detail-wrap">
+                <!-- LMS 진도율 확인 박스 (포켓클래스) -->
+                <div class="lms-info-box lms-info-box--alt">
+                  <div class="lms-info-head">
+                    <span class="lms-info-icon">📱</span>
+                    <div class="lms-info-text">
+                      <div class="lms-info-label">교육 진도율 확인하러 가기</div>
+                      <a href="https://www.pocketclass.co.kr/companyMng/login" class="lms-info-link" target="_blank" rel="noopener">교육담당자 LMS (포켓클래스) 바로가기 →</a>
+                    </div>
+                  </div>
+                  <div class="lms-info-creds">
+                    <div class="lms-info-cred"><span class="cred-label">ID</span><span class="cred-value">사업자등록번호</span></div>
+                    <div class="lms-info-cred"><span class="cred-label">PW</span><span class="cred-value">사업자등록번호!</span></div>
+                  </div>
                 </div>
-                <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
-              </a>
-              <a href="./courses/safety.html" class="course-detail-link">
-                <span>산업안전보건교육 자세히 보기</span>
-                <span class="course-detail-arrow">→</span>
-              </a>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📋 한눈에 보기</h2>
+                  <dl class="course-dl detail-dl">
+                    <dt>법적 근거</dt><dd>산업안전보건법 제29조 · 시행규칙 제26조</dd>
+                    <dt>교육 대상</dt><dd>5인 이상 사업장 전 근로자</dd>
+                    <dt>교육 주기</dt><dd>분기별 (사무직 매반기, 그 외 매분기)</dd>
+                    <dt>교육 시간</dt><dd>직종·반기별 3~6시간</dd>
+                  </dl>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📌 산업안전보건교육 안내</h2>
+                  <p>세종에듀에서 수강하시는 산업안전보건교육은<br />지정 교육기관인 <strong>포켓클래스</strong>와 연동되어 진행됩니다.</p>
+                  <ul class="detail-list">
+                    <li>교육 수강은 <strong>포켓클래스 사이트</strong>에서 진행됩니다.</li>
+                    <li><strong>진도율 확인도 포켓클래스 기준</strong>이 정확한 정보입니다.</li>
+                    <li>세종에듀 사이트에서 진도율이 0%로 보이더라도 정상적인 현상이므로 신경 쓰지 않으셔도 됩니다.</li>
+                  </ul>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📌 필수 안내사항</h2>
+                  <ul class="detail-list">
+                    <li>산업안전보건교육은 <strong>본인인증이 필수</strong>입니다.</li>
+                    <li>본인인증이 어려운 경우 <strong>반드시 사전 전달 부탁드립니다.</strong></li>
+                  </ul>
+                  <p class="detail-emphasis">📢 해당 교육은 사업장에서 발생할 수 있는 산업재해를 예방하기 위한 <strong>법정 의무 교육</strong>으로 반드시 본인이 수강하는 것을 권고드립니다.</p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📌 산업안전보건교육 FAQ</h2>
+
+                  <div class="faq-item">
+                    <h4 class="faq-q">1. 대표자도 수강해야 하나요?</h4>
+                    <div class="faq-a">
+                      <ul>
+                        <li>필수 대상은 아닙니다.</li>
+                        <li>산업안전보건교육은 <strong>근로자를 대상으로 하는 교육</strong>입니다.</li>
+                        <li>단, 건설업 등 일부 업종은 외부 요청으로 수강하는 경우가 있습니다.</li>
+                      </ul>
+                      <p class="faq-tip">👉 <strong>대표자 수강 원하실 경우 별도 요청 부탁드립니다.</strong></p>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h4 class="faq-q">2. 관리감독자 교육 이수자는 산업안전보건교육을 들어야 하나요?</h4>
+                    <div class="faq-a">
+                      <p><strong>수강하지 않으셔도 됩니다.</strong></p>
+                      <p class="faq-tip">✔ 산업안전보건교육 면제 대상</p>
+                      <ul>
+                        <li>관리감독자 교육 이수자</li>
+                        <li>안전관리책임자 / 안전관리자 교육 이수자</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h4 class="faq-q">3. 관리감독자 교육이란?</h4>
+                    <div class="faq-a">
+                      <p>관리감독자 교육은 현장에서 근로자를 직접 지휘·감독하는 책임자가 받는 교육으로,</p>
+                      <ul>
+                        <li>작업 중 발생할 수 있는 위험요소를 사전에 파악하고</li>
+                        <li>안전조치를 수행할 수 있도록 하는 <strong>법정 필수 교육</strong>입니다.</li>
+                      </ul>
+                      <p class="faq-tip">👉 대상 예시</p>
+                      <ul>
+                        <li>부서장, 팀장</li>
+                        <li>현장 반장, 조장 등</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h4 class="faq-q">4. 건너뛰기 / 빨리감기 가능한가요?</h4>
+                    <div class="faq-a">
+                      <p>❌ <strong>불가능합니다.</strong></p>
+                      <p>→ 교육 규정상 반드시 정상 수강이 필요합니다.</p>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h4 class="faq-q">5. 수료 기준은 어떻게 되나요?</h4>
+                    <div class="faq-a">
+                      <p>✔ <strong>총점 70점 이상 시 수료</strong></p>
+                      <div class="score-box">
+                        <h5 class="score-head">📊 평가 기준</h5>
+                        <ul class="score-list">
+                          <li>진도율 : <strong>20점</strong></li>
+                          <li>최종시험 : <strong>80점</strong></li>
+                        </ul>
+                        <h5 class="score-head">👩‍💻 진도 기준</h5>
+                        <ul class="score-list">
+                          <li>1차시당 <strong>50% 이상 수강 시</strong> 이수 인정</li>
+                          <li>총 12차시 중 <strong>90% 이상 수강 필수 (10차시 이상)</strong></li>
+                          <li>→ 전체 수강 시 진도 점수 20점 반영</li>
+                        </ul>
+                        <h5 class="score-head">📝 시험</h5>
+                        <ul class="score-list">
+                          <li>시험 점수 환산 후 반영</li>
+                          <li>예: 100점 → 80점 반영</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📎 관련 자료</h2>
+                  <a href="./downloads/산업안전보건교육_안내문.pdf" download class="download-card">
+                    <div class="download-ico download-ico--pdf">PDF</div>
+                    <div class="download-meta">
+                      <div class="download-name">산업안전보건교육 안내문</div>
+                      <div class="download-sub">분기별 일정·교육내용 포함</div>
+                    </div>
+                    <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
+                  </a>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -388,30 +650,147 @@
               <span class="acc-chev">▾</span>
             </button>
             <div class="course-body acc-body">
-              <dl class="course-dl">
-                <dt>법적 근거</dt><dd>산업안전보건법 시행규칙 제26조 [별표 4, 5]</dd>
-                <dt>교육 대상</dt><dd>사업장 내 관리감독자로 지정된 직원</dd>
-                <dt>교육 주기</dt><dd>연 1회 (연간 누적 16시간)</dd>
-                <dt>교육 시간</dt><dd>연간 16시간</dd>
-              </dl>
-              <h4>수강 방법</h4>
-              <ol class="course-steps">
-                <li>관리감독자 대상 여부 회신</li>
-                <li>매월 공유되는 교육 일정 중 선택</li>
-                <li>지정된 일정에 온라인·집합 교육 수강</li>
-              </ol>
-              <a href="./downloads/관리감독자교육_안내문.pdf" download class="download-card download-card--sm inline">
-                <div class="download-ico download-ico--pdf">PDF</div>
-                <div class="download-meta">
-                  <div class="download-name">관리감독자교육 안내문</div>
-                  <div class="download-sub">월별 일정·신청 절차 포함</div>
+              <div class="course-detail-wrap">
+                <!-- 핵심 강조 박스 -->
+                <div class="alert-banner">
+                  <div class="alert-banner-icon">⚠️</div>
+                  <div class="alert-banner-text">
+                    <h3 class="alert-banner-title">선택이 아닌 필수 교육입니다</h3>
+                    <p>산업안전보건법에 따라 <strong>상시근로자 5인 이상 사업장은 관리감독자를 반드시 선임</strong>해야 하며, 관리감독자는 <strong>정기 안전보건교육을 이수해야 합니다.</strong></p>
+                    <p class="alert-banner-strong">👉 미이수 시 <strong>1인당 최대 500만원 과태료 발생</strong></p>
+                  </div>
                 </div>
-                <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
-              </a>
-              <a href="./courses/supervisor.html" class="course-detail-link">
-                <span>관리감독자교육 자세히 보기</span>
-                <span class="course-detail-arrow">→</span>
-              </a>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">⚖️ 관련 법령 정리</h2>
+                  <div class="info-table-wrap">
+                    <table class="info-table">
+                      <thead>
+                        <tr><th>구분</th><th>법령</th><th>조항</th><th>핵심 내용</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>법적 근거</td><td>산업안전보건법</td><td>제16조</td><td>사업주는 생산과 관련된 업무와 소속 직원을 직접 지휘·감독하는 관리감독자를 선임하고, 해당 관리감독자가 산업안전 및 보건 업무를 수행하도록 해야 함</td></tr>
+                        <tr><td>교육 의무</td><td>산업안전보건법</td><td>제29조</td><td>사업주는 소속 근로자에게 정기적으로 안전보건교육을 실시해야 하며, 등록된 교육기관에 위탁 가능</td></tr>
+                        <tr><td>교육 기준</td><td>산업안전보건법 시행규칙</td><td>제26조</td><td>관리감독자 정기교육은 연간 16시간 이상 실시</td></tr>
+                        <tr><td>교육 시간 예외</td><td>시행규칙</td><td>—</td><td>전년도 무재해 사업장의 경우 8시간 교육 가능</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">👤 관리감독자란?</h2>
+                  <p>관리감독자는 단순 직책이 아니라 <strong>현장에서 근로자를 직접 지휘·감독하는 책임자</strong>입니다.</p>
+                  <ul class="detail-list detail-list--check">
+                    <li>팀장 / 실장 / 파트장 / 반장 / 조장</li>
+                    <li>현장 책임자 / 공정 관리자</li>
+                    <li>작업 지시 및 안전 점검 담당자</li>
+                  </ul>
+                  <p class="detail-emphasis">👉 <strong>직책명이 아닌 '실제 역할' 기준으로 판단됩니다.</strong></p>
+
+                  <h3 class="detail-h3">관리감독자의 주요 역할</h3>
+                  <ul class="detail-list">
+                    <li>작업 전 안전 점검 및 위험요소 확인</li>
+                    <li>보호구 착용 지도</li>
+                    <li>산업재해 발생 시 보고 및 응급조치</li>
+                    <li>작업환경 정리 및 통로 확보</li>
+                    <li>위험성 평가 참여 및 개선조치</li>
+                  </ul>
+                  <p class="detail-emphasis">👉 즉, <strong>현장 안전의 핵심 관리자 역할</strong></p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">⏱️ 관리감독자 교육시간</h2>
+                  <p>관리감독자 교육은 법적으로 <strong>연간 16시간 이상 이수</strong>가 원칙입니다.<br />다만, 기업의 상황에 따라 교육시간이 달라질 수 있습니다.</p>
+
+                  <h3 class="detail-h3">📌 교육시간 기준</h3>
+                  <div class="info-table-wrap">
+                    <table class="info-table info-table--small">
+                      <thead><tr><th>구분</th><th>교육시간</th></tr></thead>
+                      <tbody>
+                        <tr><td>최초 관리감독자 지정</td><td><strong>16시간 필수</strong></td></tr>
+                        <tr><td>전년도 산업재해 발생 기업</td><td><strong>16시간 필수</strong></td></tr>
+                        <tr><td>전년도 산업재해 미발생 기업</td><td><strong>8시간 가능</strong></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <h3 class="detail-h3">📌 교육 형태 (필수 기준)</h3>
+                  <p>관리감독자 교육은 단순 온라인 교육으로만 진행이 불가능하며,<br />👉 반드시 <strong>집체교육(오프라인 또는 실시간 교육)</strong>이 포함되어야 합니다.</p>
+                  <ul class="detail-list">
+                    <li>전체 교육시간의 <strong>50% 이상 필수</strong></li>
+                    <li>오프라인 교육 또는 <strong>ZOOM 실시간 교육 인정</strong></li>
+                    <li>나머지 시간은 온라인 교육 가능</li>
+                  </ul>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📺 교육 진행 방식</h2>
+                  <p>본 교육은 <strong>고용노동부 지정 안전보건교육기관 '포켓클래스'</strong>에서 진행됩니다.</p>
+
+                  <div class="feature-box feature-box--alt">
+                    <h4>🔥 포켓클래스 ZOOM 실시간 교육의 장점</h4>
+                    <ul>
+                      <li>Zoom 실시간 교육 (법적 인정)</li>
+                      <li>이동 없이 사무실·현장에서 수강 가능</li>
+                      <li>업무 공백 최소화</li>
+                      <li>추가 비용 없음</li>
+                    </ul>
+                    <p class="feature-foot">👉 <strong>법적 기준 충족 + 가장 효율적인 교육 방식</strong></p>
+                  </div>
+
+                  <h3 class="detail-h3">📌 교육 신청 방법</h3>
+                  <p>아래 링크를 통해 신청 가능합니다.</p>
+                  <a href="https://apply.pocketclass.co.kr/" class="detail-link-btn" target="_blank" rel="noopener">
+                    <span>포켓클래스 교육 신청하러 가기</span>
+                    <span class="detail-link-btn-arrow">→</span>
+                  </a>
+                  <p class="detail-emphasis">✔ 신청 시 <strong>소개자 : 세종에듀</strong> 반드시 기재</p>
+
+                  <h3 class="detail-h3">📌 사전 준비서류</h3>
+                  <ul class="detail-list">
+                    <li>사업자등록증</li>
+                    <li>훈련생 신분증 사본</li>
+                  </ul>
+                  <p class="detail-note">👉 교육 안내 및 수강 링크는 <strong>교육 전일에 포켓클래스에서 개별 발송</strong>되며, 문자를 통해 확인하실 수 있습니다.</p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">🚨 꼭 확인해주세요</h2>
+                  <p>관리감독자 교육은 선택 교육이 아니라, 대상자에게 필요한 <strong>법정 안전보건교육</strong>입니다.</p>
+                  <p>기업 내 관리감독자에 해당하는 직원이 있다면 <strong>매년 교육 이수 여부를 확인</strong>해 주시기 바랍니다.</p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">💱 교육비 납부</h2>
+                  <p>관리감독자 교육비는 교육기관 <strong>포켓클래스(PocketClass)</strong>에 납부 부탁드립니다.</p>
+                  <div class="feature-box">
+                    <h4>💼 계좌 정보</h4>
+                    <ul class="detail-list">
+                      <li><strong>국민은행</strong></li>
+                      <li>주식회사 포켓클래스</li>
+                      <li><strong>649301-04-17282</strong></li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">🏆 수료증 발급 가이드</h2>
+                  <p><a href="https://apply.pocketclass.co.kr/" target="_blank" rel="noopener" class="text-link">포켓클래스 신청 페이지</a>에 접속하셔서 가이드에 따라 수료증 발급이 가능합니다.</p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📎 관련 자료</h2>
+                  <a href="./downloads/관리감독자교육_안내문.pdf" download class="download-card">
+                    <div class="download-ico download-ico--pdf">PDF</div>
+                    <div class="download-meta">
+                      <div class="download-name">관리감독자교육 안내문</div>
+                      <div class="download-sub">월별 일정·신청 절차 포함</div>
+                    </div>
+                    <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
+                  </a>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -425,31 +804,127 @@
               <span class="acc-chev">▾</span>
             </button>
             <div class="course-body acc-body">
-              <dl class="course-dl">
-                <dt>운영 근거</dt><dd>고용보험법 직업능력개발훈련 지원제도</dd>
-                <dt>교육 대상</dt><dd>고용보험 가입 사업장 재직자</dd>
-                <dt>교육 주기</dt><dd>과정별 상이 (수시 개강)</dd>
-                <dt>환급 구조</dt><dd>수료 후 고용보험 환급 신청 (세종에듀 서류 지원)</dd>
-              </dl>
-              <h4>수강 방법</h4>
-              <ol class="course-steps">
-                <li>관심 직무 과정 선택 (세종에듀 상담)</li>
-                <li>훈련 계약 체결 및 HRD-Net 신고</li>
-                <li>온라인 수강 및 수료</li>
-                <li>세종에듀의 환급 서류 지원 → 고용보험 환급</li>
-              </ol>
-              <a href="./downloads/환급과정_안내문.pdf" download class="download-card download-card--sm inline">
-                <div class="download-ico download-ico--pdf">PDF</div>
-                <div class="download-meta">
-                  <div class="download-name">환급과정 안내문</div>
-                  <div class="download-sub">과정 리스트·환급 절차 포함</div>
+              <div class="course-detail-wrap">
+                <!-- LMS 진도율 확인 박스 -->
+                <div class="lms-info-box">
+                  <div class="lms-info-head">
+                    <span class="lms-info-icon">🎓</span>
+                    <div class="lms-info-text">
+                      <div class="lms-info-label">교육 진도율 확인하러 가기</div>
+                      <a href="https://www.sejongedu.sc.kr/companyMng/login" class="lms-info-link" target="_blank" rel="noopener">교육담당자 LMS 바로가기 →</a>
+                    </div>
+                  </div>
+                  <div class="lms-info-creds">
+                    <div class="lms-info-cred"><span class="cred-label">ID</span><span class="cred-value">사업자등록번호</span></div>
+                    <div class="lms-info-cred"><span class="cred-label">PW</span><span class="cred-value">사업자등록번호!</span></div>
+                  </div>
                 </div>
-                <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
-              </a>
-              <a href="./courses/refund.html" class="course-detail-link">
-                <span>환급과정 자세히 보기</span>
-                <span class="course-detail-arrow">→</span>
-              </a>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📌 환급과정 안내</h2>
+                  <p>세종에듀에서 제공하는 직무교육은 <strong>산업인력공단 및 한국직업능력평가원에서 정식 승인된 교육과정</strong>입니다.</p>
+                  <p>기업 재직자의 직무역량 향상을 위해 <strong>국가에서 교육비를 지원하는 과정</strong>으로, 조건 충족 시 <strong>최대 90%까지 환급</strong>이 가능합니다.</p>
+                  <p class="detail-note">단, <strong>고용보험 가입 재직자에 한해 지원 가능</strong>합니다.</p>
+
+                  <div class="feature-box">
+                    <h4>💰 환급 진행 흐름</h4>
+                    <ol class="detail-list detail-list--num">
+                      <li>사업주가 교육비를 <strong>선납</strong></li>
+                      <li>교육 수료 시 <strong>산업인력공단에 지원금 신청</strong></li>
+                      <li>수료 인원 기준으로 <strong>교육비 환급</strong></li>
+                    </ol>
+                    <p class="feature-foot">📌 연간 지원한도 내에서 지원 가능<br />📌 우선지원기업은 더 높은 지원율 적용</p>
+                  </div>
+
+                  <p>👉 자세한 내용은 <a href="https://www.sejongedu.sc.kr/home/system-introduction" target="_blank" rel="noopener" class="text-link">세종에듀 홈페이지 &gt; 제도소개</a>에서 확인 가능합니다.</p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📚 1. SMAT Module A 핵심내용 정복하기</h2>
+                  <ul class="detail-list">
+                    <li>고객응대뿐만 아니라 <strong>전 직군에서 필요한 커뮤니케이션 및 문제해결 역량을 향상시키는 교육</strong></li>
+                    <li>다양한 산업군에서 활용 가능한 <strong>실무 중심 서비스·직무 역량 강화 과정</strong></li>
+                  </ul>
+
+                  <div class="course-info-grid">
+                    <div class="course-info-card">
+                      <h4 class="course-info-head">💰 교육비</h4>
+                      <ul>
+                        <li>1인당 : <strong>129,360원</strong></li>
+                        <li>우선지원기업 (90% 지원 시) : <strong class="highlight">116,424원 환급</strong></li>
+                      </ul>
+                    </div>
+                    <div class="course-info-card">
+                      <h4 class="course-info-head">👩‍🎓 수료조건</h4>
+                      <ul>
+                        <li>최종평가 및 과제 점수 반영 (진도율 80% 이상일 경우 응시 가능)</li>
+                        <li>최종점수 : <strong>50점 이상</strong>
+                          <ul>
+                            <li>최종평가(시험) : 50% 반영</li>
+                            <li>과제 : 50% 반영</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📚 2. 팀워크로 만드는 미래 (선배와 후배의 동행)</h2>
+                  <ul class="detail-list">
+                    <li>조직 내 협업 및 커뮤니케이션 역량 강화</li>
+                    <li>전 직원 대상 <strong>조직문화 및 직무역량 교육</strong></li>
+                  </ul>
+
+                  <div class="course-info-grid">
+                    <div class="course-info-card">
+                      <h4 class="course-info-head">💰 교육비</h4>
+                      <ul>
+                        <li>1인당 : <strong>30,800원</strong></li>
+                        <li>우선지원기업 (90% 지원 시) : <strong class="highlight">27,720원 환급</strong></li>
+                      </ul>
+                    </div>
+                    <div class="course-info-card">
+                      <h4 class="course-info-head">👩‍🎓 수료조건</h4>
+                      <ul>
+                        <li>최종평가 및 과제 점수 반영 (진도율 80% 이상일 경우 응시 가능)</li>
+                        <li>최종점수 : <strong>50점 이상</strong>
+                          <ul>
+                            <li>최종평가(시험) : 50% 반영</li>
+                            <li>과제 : 50% 반영</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <p class="detail-note">자세한 내용은 제안서를 참고 부탁드립니다.</p>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">⚠️ 교육 진행 시 유의사항</h2>
+                  <p>본 교육은 <strong>국가 지원 사업</strong>으로 운영됩니다. 아래 사항은 반드시 준수되어야 합니다.</p>
+                  <ul class="detail-list detail-list--warn">
+                    <li><strong>건너뛰기 / 배속 수강 불가</strong></li>
+                    <li><strong>대리 수강 절대 불가</strong></li>
+                    <li><strong>본인인증 필수</strong></li>
+                    <li><strong>시험 및 과제 필수 제출</strong></li>
+                    <li><strong>고용보험 미가입자 지원 불가</strong></li>
+                  </ul>
+                </section>
+
+                <section class="detail-section">
+                  <h2 class="detail-h2">📎 관련 자료</h2>
+                  <a href="./downloads/환급과정_안내문.pdf" download class="download-card">
+                    <div class="download-ico download-ico--pdf">PDF</div>
+                    <div class="download-meta">
+                      <div class="download-name">환급과정 안내문</div>
+                      <div class="download-sub">과정 리스트·환급 절차 포함</div>
+                    </div>
+                    <div class="download-arrow"><span class="download-arrow-icon">↓</span><span class="download-arrow-text">다운로드</span></div>
+                  </a>
+                </section>
+              </div>
             </div>
           </article>
         </div>
