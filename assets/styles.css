@@ -4659,3 +4659,162 @@ img { max-width: 100%; display: block; }
     border-bottom: 2px solid var(--color-primary);
   }
 }
+
+/* =========================================================
+   추가 컴포넌트 (수정요청 v2 — 2026-04-30)
+   ========================================================= */
+
+/* 빨간 강조 텍스트 (90% 환급 등) */
+.text-highlight-red {
+  color: var(--red-500) !important;
+  font-weight: 800 !important;
+}
+.text-warn {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--red-500);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* FAQ 답변 안에서 라벨/리스트 강조 박스 (면제대상·대상예시) */
+.faq-highlight-box {
+  margin: 12px 0;
+  padding: 14px 18px;
+  background: var(--blue-50);
+  border: 1.5px solid var(--blue-100);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 12px;
+}
+.faq-highlight-head {
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  color: var(--color-primary) !important;
+  margin: 0 0 10px !important;
+  letter-spacing: -0.005em;
+}
+.faq-highlight-box ul {
+  margin: 0 !important;
+  padding-left: 22px !important;
+  list-style: disc !important;
+}
+.faq-highlight-box ul li {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  color: var(--slate-800) !important;
+  margin-bottom: 4px !important;
+}
+
+/* feature-foot 교체 — 좌측 정렬 bullet 리스트 (📌 대신 ✓ 아이콘) */
+.feature-bullets {
+  list-style: none !important;
+  margin: 14px 0 0 !important;
+  padding: 12px 16px !important;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.feature-bullets li {
+  position: relative;
+  padding-left: 22px !important;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: var(--color-deep) !important;
+  font-weight: 600;
+}
+.feature-bullets li::before {
+  content: "✓";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* supervisor — ZOOM 박스 + 등록증 이미지 그리드 (좌:박스 / 우:등록증) */
+.zoom-info-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin: 16px 0 20px;
+}
+.zoom-info-card { margin: 0 !important; }
+.cert-figure {
+  margin: 0;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+}
+.cert-figure-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+}
+.cert-figure-caption {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  line-height: 1.6;
+}
+.cert-figure-caption strong {
+  color: var(--color-deep);
+  font-size: 14px;
+}
+
+/* must-know-grid — refund 교육 필수 안내사항 그리드 */
+.must-know-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+.must-know-item {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+}
+.must-know-item--full { grid-column: span 2; }
+.must-know-head {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: var(--color-deep) !important;
+  margin: 0 0 12px !important;
+  letter-spacing: -0.01em;
+  line-height: 1.4 !important;
+}
+.must-know-head::after { content: none !important; }
+.must-know-item p {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 8px !important;
+}
+.must-know-item .detail-list { margin-bottom: 8px !important; }
+.must-know-item .detail-list li { font-size: 14px !important; }
+.must-know-item .detail-emphasis {
+  font-size: 14.5px !important;
+  margin-top: 12px !important;
+  padding: 10px 14px !important;
+}
+
+@media (max-width: 900px) {
+  .zoom-info-grid { grid-template-columns: 1fr; gap: 14px; }
+  .cert-figure { padding: 12px; }
+  .must-know-grid { grid-template-columns: 1fr; gap: 10px; }
+  .must-know-item--full { grid-column: span 1; }
+  .must-know-item { padding: 18px 20px; }
+  .must-know-head { font-size: 15px !important; }
+  .feature-bullets { padding: 10px 14px !important; }
+  .feature-bullets li { font-size: 14px !important; }
+}
