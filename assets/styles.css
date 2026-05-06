@@ -4824,3 +4824,290 @@ img { max-width: 100%; display: block; }
   .feature-bullets { padding: 10px 14px !important; }
   .feature-bullets li { font-size: 14px !important; }
 }
+
+/* =========================================================
+   환급과정 — 훈련기관 신청 대행 흐름도 (refund-flow)
+   페이지 디자인 톤(파란/cyan/네이비)에 맞춘 HTML/CSS 다이어그램
+   ========================================================= */
+.refund-flow {
+  margin: 18px 0 24px;
+  background: linear-gradient(135deg, var(--blue-50) 0%, rgba(6, 182, 212, 0.06) 100%);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px 24px;
+}
+.refund-flow-head {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--blue-200);
+}
+.refund-flow-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.refund-flow-title {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: var(--color-deep) !important;
+  margin: 0 0 6px !important;
+  letter-spacing: -0.02em;
+}
+.refund-flow-sub {
+  font-size: 14px !important;
+  color: var(--color-text-sub) !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* 3개 액터 (사업주 / 세종에듀 / 한국산업인력공단) */
+.refund-flow-actors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.refund-actor {
+  background: #fff;
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 18px 14px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s var(--ease-out);
+}
+.refund-actor:hover { transform: translateY(-2px); }
+.refund-actor--owner {
+  border-color: var(--slate-300);
+}
+.refund-actor--sejong {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, #fff 0%, var(--blue-50) 100%);
+}
+.refund-actor--hrdkorea {
+  border-color: var(--cyan-500);
+  background: linear-gradient(135deg, #fff 0%, rgba(6, 182, 212, 0.08) 100%);
+}
+.refund-actor-ico {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.refund-actor-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-deep);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.refund-actor-role {
+  font-size: 12px;
+  color: var(--color-text-sub);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* 5단계 흐름 — 번호+경로+액션 */
+.refund-flow-steps {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 20px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  counter-reset: refund-step-counter;
+}
+.refund-step {
+  display: flex !important;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 14px 18px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+.refund-step--final {
+  border-left-color: var(--cyan-500);
+  background: linear-gradient(90deg, #fff 0%, rgba(6, 182, 212, 0.06) 100%);
+}
+.refund-step::before { content: none !important; }
+.refund-step-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.refund-step--final .refund-step-num { background: var(--cyan-500); }
+.refund-step-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.refund-step-route {
+  font-size: 12.5px;
+  color: var(--color-text-sub);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.refund-step-arrow {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 13px;
+}
+.refund-step-action {
+  font-size: 14.5px;
+  color: var(--color-deep);
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+.refund-step-action strong { color: var(--color-deep); font-weight: 800; }
+
+/* 하단 진행 방식 요약 박스 */
+.refund-flow-foot {
+  background: #fff;
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+}
+.refund-flow-foot-head {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.refund-flow-foot p {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  margin: 0 0 6px !important;
+  color: var(--slate-800);
+}
+.refund-flow-foot-note {
+  font-size: 13.5px !important;
+  color: var(--color-text-sub) !important;
+  padding-top: 8px;
+  border-top: 1px solid var(--slate-100);
+  margin-top: 8px !important;
+}
+
+@media (max-width: 900px) {
+  .refund-flow { padding: 22px 20px 20px; }
+  .refund-flow-head { margin-bottom: 18px; padding-bottom: 16px; }
+  .refund-flow-title { font-size: 18px !important; }
+  .refund-flow-actors { grid-template-columns: 1fr; gap: 10px; margin-bottom: 18px; }
+  .refund-actor { padding: 14px 16px; display: flex; align-items: center; gap: 14px; text-align: left; }
+  .refund-actor-ico { font-size: 26px; margin-bottom: 0; flex-shrink: 0; }
+  .refund-actor-name { font-size: 15px; margin-bottom: 2px; }
+  .refund-actor-role { font-size: 11.5px; }
+  .refund-step { padding: 12px 14px !important; gap: 12px; }
+  .refund-step-num { width: 28px; height: 28px; font-size: 13px; }
+  .refund-step-route { font-size: 11.5px; }
+  .refund-step-action { font-size: 14px; }
+  .refund-flow-foot { padding: 16px 18px; }
+  .refund-flow-foot p { font-size: 14px !important; }
+}
+
+/* =========================================================
+   환급과정 — 세종 직무 교육 (course-card-stack)
+   2개 과정(SMAT / 팀워크)을 단일 섹션 안에 카드 stack 으로
+   ========================================================= */
+.course-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 16px 0 22px;
+}
+.course-card-block {
+  background: #fff;
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  position: relative;
+  transition: border-color 0.25s var(--ease-out);
+}
+.course-card-block:hover { border-color: var(--blue-200); }
+.course-card-block-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--slate-100);
+}
+.course-card-block-num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-primary), var(--cyan-500));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+.course-card-block-title {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: var(--color-deep) !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.4 !important;
+  flex: 1;
+}
+
+/* 제안서 다운로드 CTA */
+.proposal-cta {
+  margin-top: 20px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, var(--blue-50) 0%, rgba(6, 182, 212, 0.06) 100%);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+}
+.proposal-cta-lead {
+  font-size: 14.5px !important;
+  color: var(--color-deep) !important;
+  font-weight: 600 !important;
+  margin: 0 0 12px !important;
+  line-height: 1.5 !important;
+}
+.proposal-cta .download-card {
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .course-card-block { padding: 20px 22px; }
+  .course-card-block-num { width: 34px; height: 34px; font-size: 13px; }
+  .course-card-block-title { font-size: 16px !important; }
+  .proposal-cta { padding: 16px 18px; }
+  .proposal-cta-lead { font-size: 14px !important; }
+}
