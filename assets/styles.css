@@ -1721,12 +1721,15 @@ img { max-width: 100%; display: block; }
 .info-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  table-layout: fixed;
+  font-size: 14.5px;
   min-width: 640px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .info-table--small { min-width: 360px; }
 .info-table thead th {
-  padding: 14px 16px;
+  padding: 14px 18px;
   background: var(--slate-50);
   border-bottom: 2px solid var(--blue-100);
   font-size: 12.5px;
@@ -1736,13 +1739,16 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
+  word-break: keep-all;
 }
 .info-table tbody td {
-  padding: 14px 16px;
+  padding: 16px 18px;
   border-bottom: 1px solid var(--slate-100);
   color: var(--slate-800);
-  line-height: 1.55;
+  line-height: 1.7;
   vertical-align: top;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .info-table tbody tr:last-child td { border-bottom: none; }
 .info-table tbody tr:hover { background: var(--blue-50); }
@@ -4745,7 +4751,7 @@ img { max-width: 100%; display: block; }
 .zoom-info-card { margin: 0 !important; }
 .cert-figure {
   margin: 0;
-  padding: 14px;
+  padding: 18px;
   background: #fff;
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-md);
