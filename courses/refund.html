@@ -106,29 +106,30 @@
                   font-size="24" font-weight="800" fill="#fff"
                   letter-spacing="-0.5">훈련기관 신청 대행</text>
 
-            <!-- ============ 화살표 라인 (offset 28 — 좌측 양방향) ============ -->
+            <!-- ============ 화살표 라인 — 모든 라인 노드 외곽에서 동일 gap (14px) ============ -->
+            <!-- 노드 r=70, gap=14 → 노드 중심에서 거리 84. 좌측 양방향은 perp offset 18 추가 -->
             <!-- 좌측 라인1 (사업주 → 세종에듀, "1번"): 외측 -->
-            <line x1="336" y1="219" x2="198" y2="408"
+            <line x1="338" y1="239" x2="213" y2="421"
                   stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"
                   marker-end="url(#arr-navy)" />
             <!-- 좌측 라인2 (세종에듀 → 사업주, "2번"): 내측 -->
-            <line x1="244" y1="442" x2="382" y2="253"
+            <line x1="242" y1="441" x2="367" y2="259"
                   stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"
                   marker-end="url(#arr-navy)" />
 
             <!-- 하단 (세종에듀 → 한국산업인력공단) -->
-            <line x1="254" y1="500" x2="546" y2="500"
+            <line x1="264" y1="500" x2="536" y2="500"
                   stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"
                   marker-end="url(#arr-navy)" />
 
             <!-- 우측 (한국산업인력공단 → 사업주) -->
-            <line x1="582" y1="425" x2="442" y2="236"
+            <line x1="573" y1="431" x2="448" y2="249"
                   stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"
                   marker-end="url(#arr-navy)" />
 
             <!-- ============ 라벨 ============ -->
-            <!-- 좌측 라벨 (두 라인 정중앙, rotate -54도) -->
-            <g transform="translate(290, 330) rotate(-54)">
+            <!-- 좌측 라벨 (두 라인 정중앙, rotate -55도) -->
+            <g transform="translate(290, 340) rotate(-55)">
               <text x="0" y="-7" text-anchor="middle"
                     font-size="15" font-weight="800" fill="#0A1628">1. 위탁계약 및 계좌신청</text>
               <text x="0" y="15" text-anchor="middle"
@@ -136,13 +137,13 @@
             </g>
 
             <!-- 하단 라벨 (라인 위, 4 위 / 3 아래 — 라인 가까이) -->
-            <text x="400" y="465" text-anchor="middle"
+            <text x="400" y="462" text-anchor="middle"
                   font-size="15" font-weight="800" fill="#0A1628">4. 비용지원금신청</text>
-            <text x="400" y="486" text-anchor="middle"
+            <text x="400" y="484" text-anchor="middle"
                   font-size="15" font-weight="800" fill="#0A1628">3. 수료보고</text>
 
-            <!-- 우측 라벨 (라인 외측, rotate 54도) -->
-            <g transform="translate(534, 313) rotate(54)">
+            <!-- 우측 라벨 (라인 외측, rotate 55도) -->
+            <g transform="translate(530, 326) rotate(55)">
               <text x="0" y="0" text-anchor="middle"
                     font-size="15" font-weight="800" fill="#0A1628">5. 비용지급</text>
             </g>
