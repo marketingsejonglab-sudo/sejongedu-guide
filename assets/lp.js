@@ -11,14 +11,10 @@
   document.addEventListener('DOMContentLoaded', () => {
 
     /* -------- 1. 올해 이수 마감 D-day (12/31 기준) -------- */
-    const dday = $('#lpDday');
-    if (dday) {
-      const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const end = new Date(now.getFullYear(), 11, 31);
-      const days = Math.round((end - today) / 86400000);
-      dday.textContent = days > 0 ? `D-${days}` : 'D-day';
-    }
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const days = Math.round((new Date(now.getFullYear(), 11, 31) - today) / 86400000);
+    $$('[data-dday]').forEach(el => { el.textContent = days > 0 ? `D-${days}` : 'D-day'; });
 
     /* -------- 2. 업종별 자가진단 -------- */
     const quiz = $('#lpQuiz');

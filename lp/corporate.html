@@ -26,7 +26,7 @@
   <!-- 시즌 띠 -->
   <div class="lp-ribbon" role="note">
     <span class="lp-ribbon-tag">연말 이수 시즌</span>
-    <span>올해 이수 마감까지 <b id="lpDday">D-day</b></span>
+    <span>올해 이수 마감까지 <b data-dday>D-day</b></span>
     <span class="lp-ribbon-sub">· 개강 희망일 영업일 4일 전까지 서류 제출</span>
   </div>
 
@@ -51,39 +51,37 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container lp-hero-grid">
         <div class="lp-hero-copy">
-          <p class="lp-hero-hook">올해 법정의무교육, 다 마치셨나요?</p>
           <h1 id="lp-hero-title" class="lp-hero-title">
-            <span class="accent">법정의무교육 위탁</span>,<br />
-            명단만 주시면<br class="lp-br-mobile" /> 일괄 등록합니다
+            <span class="lp-hero-q">5대 <span class="accent">법정의무교육</span>,<br />우리 회사도 전부<br class="lp-br-mobile" /> 받아야 할까요?</span>
+            <span class="lp-hero-a">명단만 주시면 <mark>위탁 운영</mark>으로 한 번에 끝냅니다</span>
           </h1>
-          <p class="lp-hero-sub">
-            성희롱 예방교육 · 직장 내 괴롭힘 · 장애인 인식개선 · 개인정보보호 · 4대 폭력 예방교육을
-            온라인으로 한 번에 위탁 운영하고, <strong>이수 현황 관리</strong>까지 맡습니다.
-          </p>
           <ul class="lp-facts" aria-label="핵심 안내">
-            <li><b>연 1회</b> 의무교육</li>
-            <li><b>PC·모바일</b> 온라인 수강</li>
+            <li><b>5인 미만</b>도 성희롱 예방교육 대상</li>
+            <li>직무교육 환급 <b>최대 90%</b></li>
             <li><b>명단</b>만 주시면 일괄 등록</li>
           </ul>
           <div class="lp-hero-actions">
             <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-hero" class="lp-btn lp-btn--primary">📝 견적 요청</a>
             <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-hero" class="lp-btn lp-btn--kakao" target="_blank" rel="noopener">💬 카톡 상담</a>
           </div>
-          <p class="lp-hero-hours">상담 월~목 09~18시 · 금 09~17시</p>
+          <p class="lp-hero-hours"><a href="#check" class="lp-hero-link">우리 회사 해당 교육 3번 선택으로 확인 →</a><span>상담 월~목 09~18시 · 금 09~17시</span></p>
         </div>
 
-        <!-- 담당자 페이지 화면 예시 (데스크톱 전용 장식) -->
-        <div class="lp-mock" aria-hidden="true">
-          <div class="lp-mock-bar"><i></i><i></i><i></i><span>교육담당자 페이지 · 화면 예시</span></div>
-          <div class="lp-mock-body">
-            <div class="lp-mock-title">2026 법정의무교육 이수 현황</div>
-            <div class="lp-mock-row"><span>성희롱 예방교육</span><em class="is-done">이수</em></div>
-            <div class="lp-mock-row"><span>직장 내 괴롭힘 예방교육</span><em class="is-done">이수</em></div>
-            <div class="lp-mock-row"><span>장애인 인식개선 교육</span><em class="is-ing">수강 중</em></div>
-            <div class="lp-mock-row"><span>개인정보보호 교육</span><em class="is-ing">수강 중</em></div>
-            <div class="lp-mock-row"><span>4대 폭력 예방교육</span><em>대기</em></div>
+        <!-- 마감 D-day + 해당 교육 체크 (데스크톱) -->
+        <a href="#check" class="lp-hero-card" aria-label="우리 회사 해당 교육 확인하기">
+          <div class="lp-hero-card-top">
+            <span>올해 이수 마감</span>
+            <b data-dday>D-day</b>
           </div>
-        </div>
+          <ul class="lp-hero-card-list">
+            <li><span>성희롱 예방교육</span><small>5인 미만 포함</small></li>
+            <li><span>직장 내 괴롭힘 예방교육</span><small>연 1회</small></li>
+            <li><span>장애인 인식개선 교육</span><small>연 1회</small></li>
+            <li><span>개인정보보호 교육</span><small>처리 임직원</small></li>
+            <li><span>4대 폭력 예방교육</span><small>연 1회</small></li>
+          </ul>
+          <div class="lp-hero-card-cta">우리 회사 해당 교육 확인하기 →</div>
+        </a>
       </div>
     </section>
 
