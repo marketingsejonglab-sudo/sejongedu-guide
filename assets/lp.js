@@ -1,40 +1,53 @@
 /* ============================================================
-   세종에듀 검색광고 랜딩 — 탭 · 견적 폼 연결 · 전환 클릭 수집
-   (공통 동작은 script.js — 프로그레스 바, 모바일 CTA 바, 스무스 스크롤)
+   세종에듀 검색광고 랜딩 — 시즌 D-day · 업종별 자가진단 · 과정 탭
+   (공통 동작은 script.js — 프로그레스 바, 헤더 음영, 스무스 스크롤)
+   견적·카톡·전화 링크는 HTML에 직접 들어 있어 JS 없이도 동작합니다.
 ============================================================ */
 
 (() => {
-  /* 스모어 견적 폼 주소 — 폼을 만든 뒤 여기에 붙여 넣습니다.
-     비어 있으면 견적 버튼은 카카오톡 상담으로 연결됩니다. */
-  const SMORE_FORM_URL = '';
-  const KAKAO_URL = 'http://pf.kakao.com/_FKvwn/chat';
-
   const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-  /* -------- 전환 클릭 수집 --------
-     네이버 전환추적 스크립트를 받으면 이 함수 안에서 호출합니다. */
-  function trackConversion(kind) {
-    if (typeof window.sejongTrack === 'function') window.sejongTrack(kind);
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
 
-    /* -------- 1. 견적 버튼 → 스모어 폼 (없으면 카톡) -------- */
-    // 폼이 있으면 모든 견적 버튼이 폼을 바로 엽니다.
-    // 폼이 없으면 위쪽 버튼은 문의 섹션으로 스크롤하고, 문의 섹션 버튼은 카톡으로 갑니다.
-    $$('[data-quote]').forEach(a => {
-      if (!SMORE_FORM_URL && !a.closest('#contact')) return;
-      a.href = SMORE_FORM_URL || KAKAO_URL;
-      a.target = '_blank';
-      a.rel = 'noopener';
-    });
+    /* -------- 1. 올해 이수 마감 D-day (12/31 기준) -------- */
+    const dday = $('#lpDday');
+    if (dday) {
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const end = new Date(now.getFullYear(), 11, 31);
+      const days = Math.round((end - today) / 86400000);
+      dday.textContent = days > 0 ? `D-${days}` : 'D-day';
+    }
 
-    $$('[data-track]').forEach(a => {
-      a.addEventListener('click', () => trackConversion(a.dataset.track));
-    });
+    /* -------- 2. 업종별 자가진단 -------- */
+    const quiz = $('#lpQuiz');
+    if (quiz) {
+      const render = () => {
+        const industry = quiz.industry.value;
+        const small = quiz.size.value === 'small';
+        const privacy = quiz.privacy.value === 'yes';
+        const show = {
+          harassment: true,
+          bullying: true,
+          disability: true,
+          privacy,
+          violence: industry === '공공·비영리·기타',
+        };
+        let count = 0;
+        $$('#lpQuizList li').forEach(li => {
+          li.hidden = !show[li.dataset.course];
+          if (!li.hidden) count++;
+        });
+        $('#lpQuizCount').textContent = count;
+        $('#lpQuizLabel').textContent = `${industry} · ${small ? '5인 미만' : '5인 이상'}`;
+        $('#lpQuizNote').hidden = !small;
+      };
+      quiz.addEventListener('change', render);
+      render();
+    }
 
-    /* -------- 2. 과정 탭 (광고그룹별 #앵커로 바로 열기) -------- */
+    /* -------- 3. 과정 탭 (광고그룹별 #앵커로 바로 열기) -------- */
     const tabs = $$('.lp-tab');
     const panels = $$('.lp-panel');
 
