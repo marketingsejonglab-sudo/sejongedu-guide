@@ -21,13 +21,19 @@
 
 </head>
 <body class="lp">
+  <!-- 아이콘 (단색 SVG) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  </svg>
+
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- 시즌 띠 -->
+  <!-- 일정 안내 띠 -->
   <div class="lp-ribbon" role="note">
-    <span class="lp-ribbon-tag">연말 이수 시즌</span>
-    <span>올해 이수 마감까지 <b data-dday>D-day</b></span>
-    <span class="lp-ribbon-sub">· 개강 희망일 영업일 4일 전까지 서류 제출</span>
+    <span class="lp-ribbon-tag">연말 안내</span>
+    <span>연말엔 등록이 몰립니다 · 개강 희망일 <b>영업일 4일 전</b>까지 서류를 보내 주세요</span>
   </div>
 
   <header class="site-header" id="siteHeader">
@@ -38,8 +44,9 @@
         <span class="brand-sub">기업 법정의무교육</span>
       </a>
       <div class="header-actions">
-        <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-header" class="header-btn header-btn--kakao" target="_blank" rel="noopener">💬 카톡 상담</a>
-        <a href="tel:044-868-0450" id="cta-tel-header" class="header-btn header-btn--tel">📞 044-868-0450</a>
+        <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-header" class="header-btn header-btn--kakao" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg>카톡 상담</a>
+        <a href="tel:044-868-0450" id="cta-tel-header" class="header-btn lp-header-tel"><svg class="ico"><use href="#i-phone"/></svg>044-868-0450</a>
+        <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-header" class="header-btn lp-header-quote"><svg class="ico"><use href="#i-quote"/></svg>견적 요청</a>
       </div>
     </div>
   </header>
@@ -57,25 +64,25 @@
           </h1>
           <ul class="lp-facts" aria-label="핵심 안내">
             <li><b>5인 미만</b>도 성희롱 예방교육 대상</li>
-            <li>직무교육 환급 <b>최대 90%</b></li>
             <li><b>명단</b>만 주시면 일괄 등록</li>
+            <li>직무교육 병행 시 환급 <b>최대 90%</b></li>
           </ul>
           <div class="lp-hero-actions">
-            <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-hero" class="lp-btn lp-btn--primary">📝 견적 요청</a>
-            <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-hero" class="lp-btn lp-btn--kakao" target="_blank" rel="noopener">💬 카톡 상담</a>
+            <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-hero" class="lp-btn lp-btn--primary"><svg class="ico"><use href="#i-quote"/></svg>견적 요청</a>
+            <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-hero" class="lp-btn lp-btn--kakao" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg>카톡 상담</a>
           </div>
-          <p class="lp-hero-hours"><a href="#check" class="lp-hero-link">우리 회사 해당 교육 3번 선택으로 확인 →</a><span>상담 월~목 09~18시 · 금 09~17시</span></p>
+          <p class="lp-hero-note">견적은 받아 보고 결정하셔도 됩니다 · 카톡은 언제든 남겨 주세요, 상담 시간에 순서대로 답변드립니다</p>
         </div>
 
-        <!-- 마감 D-day + 해당 교육 체크 (데스크톱) -->
+        <!-- 해당 교육 확인 카드 (데스크톱) -->
         <a href="#check" class="lp-hero-card" aria-label="우리 회사 해당 교육 확인하기">
           <div class="lp-hero-card-top">
-            <span>올해 이수 마감</span>
-            <b data-dday>D-day</b>
+            <b>우리 회사는 몇 개일까요?</b>
+            <span>업종 · 인원 · 개인정보 3가지만 고르면 정리됩니다</span>
           </div>
           <ul class="lp-hero-card-list">
             <li><span>성희롱 예방교육</span><small>5인 미만 포함</small></li>
-            <li><span>직장 내 괴롭힘 예방교육</span><small>연 1회</small></li>
+            <li><span>직장 내 괴롭힘 예방교육</span><small>권장</small></li>
             <li><span>장애인 인식개선 교육</span><small>연 1회</small></li>
             <li><span>개인정보보호 교육</span><small>처리 임직원</small></li>
             <li><span>4대 폭력 예방교육</span><small>연 1회</small></li>
@@ -89,7 +96,7 @@
     <section class="section section--alt lp-section" id="check" aria-labelledby="check-title">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">CHECK</span>
+          <span class="eyebrow">대상 확인</span>
           <h2 id="check-title" class="section-title">업종별 법정의무교육,<br />우리 회사는 무엇을 받아야 할까요?</h2>
           <p class="section-sub">세 가지만 고르면 우리 회사에 해당하는 교육이 바로 정리됩니다.</p>
         </div>
@@ -123,22 +130,24 @@
                 <label><input type="radio" name="privacy" value="no" /><span>아니요</span></label>
               </div>
             </fieldset>
+            <a href="#lpQuizResult" class="lp-quiz-live" id="lpQuizLive">결과: 의무 3개 · 권장 1개 · 결과 보기 ↓</a>
           </form>
 
-          <div class="lp-quiz-result" aria-live="polite">
+          <div class="lp-quiz-result" id="lpQuizResult" aria-live="polite">
             <div class="lp-quiz-result-head">
               <span id="lpQuizLabel">제조업 · 5인 이상</span>
-              <b><em id="lpQuizCount">4</em>개 교육 · 연 1회</b>
+              <b>연 1회 <em id="lpQuizCount">4</em>개 교육</b>
             </div>
             <ul class="lp-quiz-list" id="lpQuizList">
-              <li data-course="harassment"><span>성희롱 예방교육</span><small>과태료 500만 원 이하</small></li>
-              <li data-course="bullying"><span>직장 내 괴롭힘 예방교육</span></li>
-              <li data-course="disability"><span>장애인 인식개선 교육</span><small>과태료 300만 원 이하</small></li>
-              <li data-course="privacy"><span>개인정보보호 교육</span></li>
-              <li data-course="violence" hidden><span>4대 폭력 예방교육</span></li>
+              <li data-course="harassment"><span>성희롱 예방교육</span><small>의무 · 과태료 500만 원 이하</small></li>
+              <li data-course="bullying"><span>직장 내 괴롭힘 예방교육</span><small>권장</small></li>
+              <li data-course="disability"><span>장애인 인식개선 교육</span><small>의무 · 과태료 300만 원 이하</small></li>
+              <li data-course="privacy"><span>개인정보보호 교육</span><small>처리 임직원</small></li>
+              <li data-course="violence" hidden><span>4대 폭력 예방교육</span><small>연 1회</small></li>
             </ul>
+            <p class="lp-quiz-also" id="lpQuizAlso">함께 확인할 교육: <b>산업안전보건교육</b></p>
             <p class="lp-quiz-note" id="lpQuizNote" hidden>5인 미만 사업장도 성희롱 예방교육 대상입니다.</p>
-            <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-check" class="lp-btn lp-btn--primary lp-btn--block">📝 이 구성으로 견적 요청</a>
+            <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-check" class="lp-btn lp-btn--primary lp-btn--block"><svg class="ico"><use href="#i-quote"/></svg>이 구성으로 견적 요청</a>
           </div>
         </div>
       </div>
@@ -148,73 +157,80 @@
     <section class="section lp-section" id="courses" aria-labelledby="courses-title">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">COURSES</span>
+          <span class="eyebrow">과정 안내</span>
           <h2 id="courses-title" class="section-title">과정별 법정의무교육 안내</h2>
           <p class="section-sub">필요한 교육만 골라도, 5개를 한 번에 맡기셔도 됩니다.</p>
         </div>
 
         <div class="lp-tabs" role="tablist" aria-label="법정의무교육 과정">
-          <button class="lp-tab" role="tab" id="tab-harassment" aria-controls="harassment" aria-selected="true">성희롱 예방교육</button>
-          <button class="lp-tab" role="tab" id="tab-bullying" aria-controls="bullying" aria-selected="false" tabindex="-1">직장 내 괴롭힘</button>
-          <button class="lp-tab" role="tab" id="tab-disability" aria-controls="disability" aria-selected="false" tabindex="-1">장애인 인식개선</button>
-          <button class="lp-tab" role="tab" id="tab-privacy" aria-controls="privacy" aria-selected="false" tabindex="-1">개인정보보호</button>
-          <button class="lp-tab" role="tab" id="tab-violence" aria-controls="violence" aria-selected="false" tabindex="-1">4대 폭력 예방</button>
+          <button class="lp-tab" role="tab" id="tab-harassment" aria-controls="harassment" aria-selected="true" data-name="성희롱 예방교육">성희롱 예방교육</button>
+          <button class="lp-tab" role="tab" id="tab-bullying" aria-controls="bullying" aria-selected="false" tabindex="-1" data-name="직장 내 괴롭힘 예방교육">직장 내 괴롭힘</button>
+          <button class="lp-tab" role="tab" id="tab-disability" aria-controls="disability" aria-selected="false" tabindex="-1" data-name="장애인 인식개선 교육">장애인 인식개선</button>
+          <button class="lp-tab" role="tab" id="tab-privacy" aria-controls="privacy" aria-selected="false" tabindex="-1" data-name="개인정보보호 교육">개인정보보호</button>
+          <button class="lp-tab" role="tab" id="tab-violence" aria-controls="violence" aria-selected="false" tabindex="-1" data-name="4대 폭력 예방교육">4대 폭력 예방</button>
         </div>
 
-        <article class="lp-panel" role="tabpanel" id="harassment" aria-labelledby="tab-harassment">
-          <h3 class="lp-panel-title">직장 내 성희롱 예방교육</h3>
-          <dl class="lp-dl">
-            <dt>법적 근거</dt><dd>남녀고용평등법 제13조</dd>
-            <dt>교육 대상</dt><dd>모든 사업장의 사업주 및 근로자 (5인 미만 포함)</dd>
-            <dt>교육 주기</dt><dd>연 1회</dd>
-            <dt>미이수 시</dt><dd><b>500만 원 이하 과태료</b></dd>
-            <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
-          </dl>
-        </article>
+        <div class="lp-course-body">
+          <article class="lp-panel" role="tabpanel" id="harassment" aria-labelledby="tab-harassment">
+            <h3 class="lp-panel-title">직장 내 성희롱 예방교육</h3>
+            <dl class="lp-dl">
+              <dt>법적 근거</dt><dd>남녀고용평등법 제13조</dd>
+              <dt>교육 대상</dt><dd>모든 사업장의 사업주 및 근로자 (5인 미만 포함)</dd>
+              <dt>교육 주기</dt><dd>연 1회</dd>
+              <dt>미이수 시</dt><dd>500만 원 이하 과태료</dd>
+              <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
+            </dl>
+          </article>
 
-        <article class="lp-panel" role="tabpanel" id="bullying" aria-labelledby="tab-bullying" hidden>
-          <h3 class="lp-panel-title">직장 내 괴롭힘 예방교육</h3>
-          <dl class="lp-dl">
-            <dt>법적 근거</dt><dd>근로기준법 제76조의2</dd>
-            <dt>교육 대상</dt><dd>모든 사업장의 사업주 및 근로자</dd>
-            <dt>교육 주기</dt><dd>연 1회</dd>
-            <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
-          </dl>
-        </article>
+          <article class="lp-panel" role="tabpanel" id="bullying" aria-labelledby="tab-bullying" hidden>
+            <h3 class="lp-panel-title">직장 내 괴롭힘 예방교육 <span class="lp-tag">권장</span></h3>
+            <dl class="lp-dl">
+              <dt>관련 법</dt><dd>근로기준법 제76조의2</dd>
+              <dt>교육 대상</dt><dd>상시 5인 이상 사업장의 사업주 및 근로자</dd>
+              <dt>교육 주기</dt><dd>연 1회 권장</dd>
+              <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
+            </dl>
+          </article>
 
-        <article class="lp-panel" role="tabpanel" id="disability" aria-labelledby="tab-disability" hidden>
-          <h3 class="lp-panel-title">직장 내 장애인 인식개선 교육</h3>
-          <dl class="lp-dl">
-            <dt>법적 근거</dt><dd>장애인고용촉진 및 직업재활법 제5조의2</dd>
-            <dt>교육 대상</dt><dd>모든 사업장의 사업주 및 근로자</dd>
-            <dt>교육 주기</dt><dd>연 1회</dd>
-            <dt>미이수 시</dt><dd><b>300만 원 이하 과태료</b></dd>
-            <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
-          </dl>
-        </article>
+          <article class="lp-panel" role="tabpanel" id="disability" aria-labelledby="tab-disability" hidden>
+            <h3 class="lp-panel-title">직장 내 장애인 인식개선 교육</h3>
+            <dl class="lp-dl">
+              <dt>법적 근거</dt><dd>장애인고용촉진 및 직업재활법 제5조의2</dd>
+              <dt>교육 대상</dt><dd>모든 사업장의 사업주 및 근로자</dd>
+              <dt>교육 주기</dt><dd>연 1회</dd>
+              <dt>미이수 시</dt><dd>300만 원 이하 과태료</dd>
+              <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
+            </dl>
+          </article>
 
-        <article class="lp-panel" role="tabpanel" id="privacy" aria-labelledby="tab-privacy" hidden>
-          <h3 class="lp-panel-title">개인정보보호 교육</h3>
-          <dl class="lp-dl">
-            <dt>법적 근거</dt><dd>개인정보 보호법 제28조</dd>
-            <dt>교육 대상</dt><dd>개인정보 처리 업무를 하는 임직원</dd>
-            <dt>교육 주기</dt><dd>연 1회</dd>
-            <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
-          </dl>
-        </article>
+          <article class="lp-panel" role="tabpanel" id="privacy" aria-labelledby="tab-privacy" hidden>
+            <h3 class="lp-panel-title">개인정보보호 교육</h3>
+            <dl class="lp-dl">
+              <dt>법적 근거</dt><dd>개인정보 보호법 제28조</dd>
+              <dt>교육 대상</dt><dd>개인정보 처리 업무를 하는 임직원</dd>
+              <dt>교육 주기</dt><dd>연 1회</dd>
+              <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
+            </dl>
+          </article>
 
-        <article class="lp-panel" role="tabpanel" id="violence" aria-labelledby="tab-violence" hidden>
-          <h3 class="lp-panel-title">4대 폭력 예방교육</h3>
-          <dl class="lp-dl">
-            <dt>구성</dt><dd>성희롱 · 성매매 · 성폭력 · 가정폭력 예방교육</dd>
-            <dt>교육 주기</dt><dd>연 1회</dd>
-            <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
-          </dl>
-        </article>
+          <article class="lp-panel" role="tabpanel" id="violence" aria-labelledby="tab-violence" hidden>
+            <h3 class="lp-panel-title">4대 폭력 예방교육</h3>
+            <dl class="lp-dl">
+              <dt>구성</dt><dd>성희롱 · 성매매 · 성폭력 · 가정폭력 예방교육</dd>
+              <dt>교육 주기</dt><dd>연 1회</dd>
+              <dt>수강 방식</dt><dd>온라인 (PC·모바일)</dd>
+            </dl>
+          </article>
 
-        <div class="lp-panel-cta">
-          <p>과정과 인원을 알려 주시면 견적을 보내 드립니다.</p>
-          <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-course" class="lp-btn lp-btn--primary">📝 견적 요청</a>
+          <aside class="lp-course-side" aria-label="위탁 운영 안내">
+            <h3>세종에듀에 맡기면</h3>
+            <ol>
+              <li><b>명단만 전달</b><span>이름·휴대폰 번호로 전 직원 일괄 등록</span></li>
+              <li><b>직원은 바로 수강</b><span>휴대폰 번호로 로그인, PC·모바일</span></li>
+              <li><b>이수 현황 관리</b><span>담당자 페이지에서 수료 확인</span></li>
+            </ol>
+            <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-course" class="lp-btn lp-btn--primary lp-btn--block"><svg class="ico"><use href="#i-quote"/></svg><span id="lpCourseCta">성희롱 예방교육 견적 요청</span></a>
+          </aside>
         </div>
       </div>
     </section>
@@ -223,7 +239,7 @@
     <section class="section section--alt lp-section" id="service" aria-labelledby="service-title">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">WHAT WE DO</span>
+          <span class="eyebrow">위탁 운영</span>
           <h2 id="service-title" class="section-title">담당자님은 명단만 보내 주세요</h2>
           <p class="section-sub">직접 챙기던 일을 세종에듀가 위탁 운영합니다.</p>
         </div>
@@ -267,7 +283,7 @@
     <section class="section lp-section" id="process" aria-labelledby="process-title">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">PROCESS</span>
+          <span class="eyebrow">진행 순서</span>
           <h2 id="process-title" class="section-title">진행은 4단계입니다</h2>
         </div>
         <ol class="lp-steps">
@@ -283,20 +299,20 @@
     <section class="section section--alt lp-section" id="faq" aria-labelledby="faq-title">
       <div class="container lp-narrow">
         <div class="section-header">
-          <span class="eyebrow">FAQ</span>
+          <span class="eyebrow">자주 묻는 질문</span>
           <h2 id="faq-title" class="section-title">자주 묻는 질문</h2>
         </div>
         <div class="faq-item">
           <h3 class="faq-q">1. 직원이 5명도 안 되는데 받아야 하나요?</h3>
-          <div class="faq-a"><p><strong>성희롱 예방교육은 5인 미만 사업장도 대상</strong>입니다. 받지 않으면 500만 원 이하 과태료가 부과될 수 있습니다.</p></div>
+          <div class="faq-a"><p>네. <strong>성희롱 예방교육은 5인 미만 사업장도 연 1회 대상</strong>입니다. 소규모 사업장도 명단만 주시면 같은 방식으로 일괄 등록해 드립니다.</p></div>
         </div>
         <div class="faq-item">
           <h3 class="faq-q">2. 직원 등록은 어떻게 하나요?</h3>
           <div class="faq-a"><p>이름·휴대폰 번호 명단만 보내 주시면 <strong>일괄 등록</strong>합니다. 직원들은 휴대폰 번호로 바로 로그인합니다.</p></div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">3. 언제까지 신청하면 되나요?</h3>
-          <div class="faq-a"><p>개강 희망일 기준 <strong>영업일 4일 전</strong>까지 사업자등록증·명단·위탁계약서를 보내 주시면 됩니다. 연말에는 문의가 몰리니 일정을 미리 잡아 두세요.</p></div>
+          <h3 class="faq-q">3. 비용은 어떻게 정해지나요?</h3>
+          <div class="faq-a"><p>과정과 인원에 따라 달라집니다. 견적 요청을 남겨 주시면 <strong>견적을 보내 드리고, 받아 보신 뒤 결정</strong>하셔도 됩니다. 직무교육을 함께 진행하면 환급 가능 여부도 같이 안내해 드립니다.</p></div>
         </div>
       </div>
     </section>
@@ -305,20 +321,20 @@
     <section class="section section--cta" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="cta-inner">
-          <span class="eyebrow eyebrow--light">CONTACT</span>
+          <span class="eyebrow eyebrow--light">문의</span>
           <h2 id="contact-title" class="cta-title">올해 이수,<br /><span class="gradient">견적부터 받아 보세요</span></h2>
-          <p class="cta-sub">회사명 · 연락처 · 인원만 남겨 주시면 담당자가 연락드립니다.</p>
+          <p class="cta-sub">기본 정보만 남겨 주시면 담당자가 연락드립니다. 견적은 받아 보고 결정하셔도 됩니다.</p>
           <div class="cta-buttons">
             <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-contact" class="cta-btn cta-btn--mobile">
-              <span class="cta-btn-ico">📝</span>
-              <span><b>견적 요청하기</b><small>회사명 · 인원 · 연락처</small></span>
+              <span class="cta-btn-ico"><svg class="ico"><use href="#i-quote"/></svg></span>
+              <span><b>견적 요청하기</b><small>회사명 · 연락처 · 인원</small></span>
             </a>
             <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-contact" class="cta-btn cta-btn--kakao" target="_blank" rel="noopener">
-              <span class="cta-btn-ico">💬</span>
-              <span><b>카카오톡 상담</b><small>pf.kakao.com/_FKvwn</small></span>
+              <span class="cta-btn-ico"><svg class="ico"><use href="#i-chat"/></svg></span>
+              <span><b>카카오톡 상담</b><small>언제든 남기시면 순서대로 답변</small></span>
             </a>
             <a href="tel:044-868-0450" id="cta-tel-contact" class="cta-btn cta-btn--tel">
-              <span class="cta-btn-ico">📞</span>
+              <span class="cta-btn-ico"><svg class="ico"><use href="#i-phone"/></svg></span>
               <span><b>044-868-0450</b><small>대표번호</small></span>
             </a>
           </div>
@@ -352,11 +368,10 @@
     </div>
   </footer>
 
-  <!-- 모바일 하단 고정 버튼 -->
-  <nav class="mobile-cta-bar lp-mobile-bar" aria-label="빠른 문의">
-    <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-bar" class="mobile-cta-btn mobile-cta-btn--kakao" target="_blank" rel="noopener">💬 카톡</a>
-    <a href="tel:044-868-0450" id="cta-tel-bar" class="mobile-cta-btn mobile-cta-btn--tel">📞 전화</a>
-    <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-bar" class="mobile-cta-btn lp-mobile-quote">📝 견적 요청</a>
+  <!-- 모바일 하단 고정 버튼 (첫 화면 버튼이 지나가면 나타남) -->
+  <nav class="mobile-cta-bar lp-mobile-bar" id="mobileCtaBar" aria-label="빠른 문의">
+    <a href="https://smore.im/form/mIHm0z004t" id="cta-quote-bar" class="mobile-cta-btn lp-mobile-quote"><svg class="ico"><use href="#i-quote"/></svg>견적 요청</a>
+    <a href="http://pf.kakao.com/_FKvwn/chat" id="cta-kakao-bar" class="mobile-cta-btn mobile-cta-btn--kakao" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg>카톡</a>
   </nav>
 
   <script src="../assets/script.js"></script>
